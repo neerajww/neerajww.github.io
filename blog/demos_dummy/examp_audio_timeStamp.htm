@@ -49,12 +49,14 @@
     
 <script type="text/javascript">
     
-    const theTimer = document.querySelector(".timer");
-    var timer = [0,0,0,0]
-    var interval = 0;
-    var timerRunning = false;    
+    // read the files in the folder
+    var client = new XMLHttpRequest();
+    client.open('GET', '../../media/audio/audio_list.txt');
+    client.onreadystatechange = function() {
+      alert(client.responseText);
+    }
+    client.send();
 
-    
     // Add leading zero to numbers 9 or below (purely for aesthetics):
     function leadingZero(time) {
         if (time <= 9) {
