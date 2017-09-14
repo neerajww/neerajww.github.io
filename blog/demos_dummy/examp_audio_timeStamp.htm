@@ -3,7 +3,7 @@
 <html lang="en-US">
 
 <head>
-    <link rel="stylesheet" href="mystyle1.css">
+<!--    <link rel="stylesheet" href="mystyle1.css"> -->
 <!--    <script src="script_for_headphone_check"></script>
 -->
 </head>
@@ -47,16 +47,14 @@
 </body>
 
     
-<script type="text/javascript">
+<script type="text/javascript">        
     
-    // read the files in the folder
-    var client = new XMLHttpRequest();
-    client.open('GET', '../../media/audio/audio_list.txt');
-    client.onreadystatechange = function() {
-      alert(client.responseText);
-    }
-    client.send();
+    const theTimer = document.querySelector(".timer");
+    var timer = [0,0,0,0]
+    var interval = 0;
+    var timerRunning = false;    
 
+    
     // Add leading zero to numbers 9 or below (purely for aesthetics):
     function leadingZero(time) {
         if (time <= 9) {
