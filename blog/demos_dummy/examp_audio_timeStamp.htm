@@ -1,0 +1,191 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <link rel="stylesheet" href="mystyle1.css">
+<!--    <script src="script_for_headphone_check"></script>
+-->
+</head>
+
+<body>
+<main>
+<!-- The below test shows up after running of the script for headphone check -->
+    Welcome!, below is what you need to do.
+        <ol>
+            <li>Press "Play" to play audio.</li>
+            <li>Hit " <strong>Yeah!</strong> " each time you hear change in speaker.</li>
+            <li>Press Create file to download the timestamps of hits.</li>
+            <li>Press Refersh to start again.</li>
+        </ol>
+<!--to put the code here for the main listening test.-->
+    
+    <div class="meta">
+    <audio id="multiaudio_1" src="../../media/audio/pm_modi_hindi.wav" preload="auto" onended="done_sound('multiaudio_1');"></audio>
+    <a href="javascript:play_sound('multiaudio_1');"><input type="button" id="alfa" value="Play"></a><br />
+    </div>
+    
+    <div class="meta">
+    <section id="clock"><br>
+    <div class="timer">00:00:00</div><br>
+    </section>
+    </div>
+    
+    <div>
+    <button id="click" onclick="myFunction()" disabled><strong> Yeah! </strong></button>
+    <p id="demo"></p>
+
+    <button id="create" disabled>Create file</button> <a download="info.txt" id="downloadlink" style="display: none">Download</a>
+    </div>
+    
+    <div class="meta">
+    <a href="javascript:reset_sound('multiaudio_1');"><input type="button" id="alfa" value="Refresh"></a><br />
+    </div>
+
+</main>
+
+</body>
+
+    
+<script type="text/javascript">
+    
+    const theTimer = document.querySelector(".timer");
+    var timer = [0,0,0,0]
+    var interval = 0;
+    var timerRunning = false;    
+
+    
+    // Add leading zero to numbers 9 or below (purely for aesthetics):
+    function leadingZero(time) {
+        if (time <= 9) {
+            time = "0" + time;
+        }
+        return time;
+    }
+    
+    // To run stop watch timer:
+    function runTimer() {
+        let currentTime = leadingZero(timer[0]) + ":" + leadingZero(timer[1]) + ":" + leadingZero(timer[2]);
+        theTimer.innerHTML = currentTime;
+        timer[3]++;
+
+        timer[0] = Math.floor((timer[3]/100)/60);
+        timer[1] = Math.floor((timer[3]/100) - (timer[0] * 60));
+        timer[2] = Math.floor(timer[3] - (timer[1] * 100) - (timer[0] * 6000));
+    }
+    
+    // To play/pause sound:
+    function play_sound(idNumber) {
+        var idNumber = document.getElementById(idNumber);
+        var status = document.querySelectorAll("input[type=button]");
+
+        if (status[0].value == "Play") {
+        idNumber.pause(); // Pause all ids before playing next file.
+        //idNumber.currentTime = 0; // Set the time back to zero, else it will replay from the pause point.
+        console.log('Play changed to Pause')
+        status[0].value = "Pause";                
+        idNumber.play();
+            
+        interval = setInterval(runTimer, 10);
+        document.getElementById("click").disabled = false; // enable create button
+        }
+
+        else {
+        idNumber.pause(); // Pause all ids before playing next file.
+        //idNumber.currentTime = 0; // Set the time back to zero, else it will replay from the pause point.
+        console.log('Pause changed to Play')
+        status[0].value = "Play";    
+		clearInterval(interval);
+        document.getElementById("click").disabled = true; // disable create button
+        }
+
+        console.log("Button: " +  status[0].value)
+    }
+
+    // To init some attributes after completion of sound playback
+    function done_sound(idNumber) {
+        var idNumber = document.getElementById(idNumber);
+        var status = document.querySelectorAll("input[type=button]");
+
+        status[0].value = "Play";
+        idNumber.pause(); // Pause all ids before playing next file.
+        idNumber.currentTime = 0; // Set the time back to zero
+        status[0].value = "Play";   
+        
+        // reset the clock display
+        clearInterval(interval);
+        interval = null;
+        timer = [0,0,0,0];
+        timerRunning = false;
+
+        theTimer.innerHTML = '00:00:00';
+        document.getElementById("click").disabled = true; // disable create button
+        document.getElementById("create").disabled = false; // enable create button
+    }
+
+    // To reset all attributes for fresh playback
+    function reset_sound(idNumber) {
+        
+        var idNumber =  document.getElementById(idNumber);
+        var status = document.querySelectorAll("input[type=button]");
+        console.log('Reseting the audio')
+        
+        // turn off the audio
+        idNumber.pause(); // Pause all ids before playing next file.
+        idNumber.currentTime = 0; // Set the time back to zero
+        status[0].value = "Play";   
+        
+        // reset the clock display
+        clearInterval(interval);
+        interval = null;
+        timer = [0,0,0,0];
+        timerRunning = false;
+
+        theTimer.innerHTML = '00:00:00';
+        document.getElementById("click").disabled = true; // disable create button
+        document.getElementById("create").disabled = true; // enable create button
+    }
+    
+    // below code is for file string creation and TXT file creation and download
+    var i = 0 
+    var sTime = ''
+    var textFile = null
+    function myFunction() {
+
+        var text = " Total Number Of Time Clicked is ";
+        i = i + 1;
+
+        sTime  = sTime + '\n' + theTimer.innerHTML;
+        document.getElementById("demo").innerHTML = text + i;
+    }
+
+
+
+    makeTextFile = function (text){
+
+     var data = new Blob([text], {type: 'text/plain'});
+
+        // If we are replacing a previously generated file we need to
+        // manually revoke the object URL to avoid memory leaks.
+        if (textFile !== null) {
+          window.URL.revokeObjectURL(textFile);
+        }
+
+        textFile = window.URL.createObjectURL(data);
+
+        return textFile;
+
+
+    };
+
+      var create = document.getElementById('create');
+
+      create.addEventListener('click', function () {
+        var link = document.getElementById('downloadlink');
+        link.href = makeTextFile(sTime);
+        link.style.display = 'block';
+      }, false);
+  
+    
+</script>    
+</html>
