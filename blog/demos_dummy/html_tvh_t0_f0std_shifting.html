@@ -1,0 +1,524 @@
+<!DOCTYPE html> 
+<html> 
+<head>
+    <meta charset="utf-8">
+    <title>Onset-Pitch Std. Dev.</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+  
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,700|Roboto:400,900" rel="stylesheet">
+    
+    <!-- Bootstrap CSS File -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+  
+    <!--
+     Libraries CSS Files 
+    <link href="Bell/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    -->
+    
+    <!--     Main Stylesheet File -->
+    <link href="css/style.css" rel="stylesheet">
+    
+    <!--     Button Shake Stylesheet File -->
+    <link href="css/csshake.min.css" rel="stylesheet">
+    
+    <!-- <raygon> -->
+    <!-- 1) Import jQuery from Google CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <!-- 2) Import HeadphoneCheck.js (minified) from McDermott S3 server -->
+    <script type="text/javascript" src="https://s3.amazonaws.com/mcd-headphone-check/v1.0/src/HeadphoneCheck.min.js"></script>
+    <!-- 2) Import HeadphoneCheck.css from McDermott S3 server -->
+    <link rel="stylesheet" type="text/css" href="https://s3.amazonaws.com/mcd-headphone-check/v1.0/src/HeadphoneCheckStyle.css">
+    <!-- </raygon> -->
+    
+</head>
+<body>
+<div class="container text-center">      
+        <br/>
+        <h2>Onset delay - F0 standard deviation scaling</h2>
+    </div>
+<div class="container text-center">      
+<p>Each tab in the tiling below corresponds to an overlapped speech, made using sum of a recorded utterance and its time-shifted (with/without F0 std. dev. saling) version.<br/>
+<samp>(x,y) indicate (Onset delay, F0 std. scaling factor), the onset delay is in milliseconds relative to the orginal speech signal.</samp>   
+    
+<br>
+    <img src="../../images/f0_stddev_scaling.png" alt="spectrogram example" height="300" width="400">
+    </p>
+</div>
+
+<div class="container text-center">  
+    <hr>
+<audio id="multiaudio_1" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_0ms_f0std_2_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_2" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_100ms_f0std_2_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_3" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_200ms_f0std_2_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_4" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_300ms_f0std_2_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_5" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_400ms_f0std_2_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_6" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_500ms_f0std_2_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_7" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_0ms_f0std_1.9_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_8" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_100ms_f0std_1.9_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_9" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_200ms_f0std_1.9_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_10" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_300ms_f0std_1.9_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_11" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_400ms_f0std_1.9_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_12" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_500ms_f0std_1.9_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_13" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_0ms_f0std_1.8_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_14" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_100ms_f0std_1.8_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_15" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_200ms_f0std_1.8_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_16" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_300ms_f0std_1.8_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_17" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_400ms_f0std_1.8_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_18" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_500ms_f0std_1.8_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_19" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_0ms_f0std_1.7_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_20" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_100ms_f0std_1.7_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_21" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_200ms_f0std_1.7_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_22" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_300ms_f0std_1.7_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_23" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_400ms_f0std_1.7_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_24" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_500ms_f0std_1.7_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_25" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_0ms_f0std_1.6_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_26" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_100ms_f0std_1.6_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_27" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_200ms_f0std_1.6_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_28" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_300ms_f0std_1.6_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_29" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_400ms_f0std_1.6_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_30" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_500ms_f0std_1.6_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_31" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_0ms_f0std_1.5_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_32" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_100ms_f0std_1.5_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_33" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_200ms_f0std_1.5_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_34" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_300ms_f0std_1.5_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_35" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_400ms_f0std_1.5_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_36" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_500ms_f0std_1.5_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_37" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_0ms_f0std_1.4_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_38" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_100ms_f0std_1.4_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_39" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_200ms_f0std_1.4_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_40" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_300ms_f0std_1.4_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_41" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_400ms_f0std_1.4_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_42" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_500ms_f0std_1.4_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_43" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_0ms_f0std_1.3_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_44" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_100ms_f0std_1.3_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_45" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_200ms_f0std_1.3_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_46" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_300ms_f0std_1.3_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_47" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_400ms_f0std_1.3_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_48" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_500ms_f0std_1.3_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_49" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_0ms_f0std_1.2_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_50" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_100ms_f0std_1.2_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_51" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_200ms_f0std_1.2_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_52" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_300ms_f0std_1.2_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_53" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_400ms_f0std_1.2_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_54" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_500ms_f0std_1.2_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_55" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_0ms_f0std_1.1_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_56" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_100ms_f0std_1.1_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_57" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_200ms_f0std_1.1_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_58" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_300ms_f0std_1.1_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_59" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_400ms_f0std_1.1_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_60" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_500ms_f0std_1.1_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_61" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_0ms_f0std_1_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_62" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_100ms_f0std_1_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_63" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_200ms_f0std_1_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_64" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_300ms_f0std_1_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_65" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_400ms_f0std_1_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_66" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_500ms_f0std_1_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_67" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_0ms_f0std_0.9_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_68" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_100ms_f0std_0.9_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_69" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_200ms_f0std_0.9_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_70" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_300ms_f0std_0.9_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_71" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_400ms_f0std_0.9_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_72" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_500ms_f0std_0.9_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_73" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_0ms_f0std_0.8_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_74" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_100ms_f0std_0.8_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_75" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_200ms_f0std_0.8_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_76" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_300ms_f0std_0.8_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_77" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_400ms_f0std_0.8_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_78" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_500ms_f0std_0.8_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_79" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_0ms_f0std_0.7_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_80" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_100ms_f0std_0.7_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_81" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_200ms_f0std_0.7_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_82" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_300ms_f0std_0.7_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_83" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_400ms_f0std_0.7_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_84" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_500ms_f0std_0.7_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_85" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_0ms_f0std_0.6_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_86" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_100ms_f0std_0.6_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_87" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_200ms_f0std_0.6_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_88" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_300ms_f0std_0.6_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_89" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_400ms_f0std_0.6_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_90" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_500ms_f0std_0.6_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_91" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_0ms_f0std_0.5_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_92" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_100ms_f0std_0.5_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_93" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_200ms_f0std_0.5_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_94" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_300ms_f0std_0.5_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_95" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_400ms_f0std_0.5_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_96" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_500ms_f0std_0.5_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_97" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_0ms_f0std_0.4_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_98" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_100ms_f0std_0.4_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_99" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_200ms_f0std_0.4_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_100" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_300ms_f0std_0.4_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_101" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_400ms_f0std_0.4_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_102" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_500ms_f0std_0.4_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_103" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_0ms_f0std_0.3_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_104" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_100ms_f0std_0.3_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_105" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_200ms_f0std_0.3_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_106" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_300ms_f0std_0.3_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_107" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_400ms_f0std_0.3_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_108" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_500ms_f0std_0.3_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_109" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_0ms_f0std_0.2_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_110" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_100ms_f0std_0.2_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_111" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_200ms_f0std_0.2_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_112" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_300ms_f0std_0.2_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_113" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_400ms_f0std_0.2_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_114" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_500ms_f0std_0.2_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_115" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_0ms_f0std_0.1_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_116" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_100ms_f0std_0.1_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_117" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_200ms_f0std_0.1_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_118" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_300ms_f0std_0.1_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_119" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_400ms_f0std_0.1_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_120" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_500ms_f0std_0.1_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_121" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_0ms_f0std_0_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_122" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_100ms_f0std_0_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_123" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_200ms_f0std_0_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_124" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_300ms_f0std_0_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_125" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_400ms_f0std_0_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<audio id="multiaudio_126" src="../../media/audio/data/qhd/t0_f0std_shifting/T0_F0std_shift_t0_500ms_f0std_0_orig_Female_Talker_01.wav" preload="auto"></audio> 
+<table>
+<tr>
+<td>
+<a href="javascript:play_multi_sound('multiaudio_1');"><input type="button" id="play" value= (0,2) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_2');"><input type="button" id="play" value= (100,2) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_3');"><input type="button" id="play" value= (200,2) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_4');"><input type="button" id="play" value= (300,2) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_5');"><input type="button" id="play" value= (400,2) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_6');"><input type="button" id="play" value= (500,2) class="btn btn-full"></a><br /> 
+</td>
+</tr>
+<tr>
+<td>
+<a href="javascript:play_multi_sound('multiaudio_7');"><input type="button" id="play" value= (0,1.9) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_8');"><input type="button" id="play" value= (100,1.9) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_9');"><input type="button" id="play" value= (200,1.9) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_10');"><input type="button" id="play" value= (300,1.9) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_11');"><input type="button" id="play" value= (400,1.9) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_12');"><input type="button" id="play" value= (500,1.9) class="btn btn-full"></a><br /> 
+</td>
+</tr>
+<tr>
+<td>
+<a href="javascript:play_multi_sound('multiaudio_13');"><input type="button" id="play" value= (0,1.8) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_14');"><input type="button" id="play" value= (100,1.8) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_15');"><input type="button" id="play" value= (200,1.8) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_16');"><input type="button" id="play" value= (300,1.8) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_17');"><input type="button" id="play" value= (400,1.8) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_18');"><input type="button" id="play" value= (500,1.8) class="btn btn-full"></a><br /> 
+</td>
+</tr>
+<tr>
+<td>
+<a href="javascript:play_multi_sound('multiaudio_19');"><input type="button" id="play" value= (0,1.7) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_20');"><input type="button" id="play" value= (100,1.7) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_21');"><input type="button" id="play" value= (200,1.7) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_22');"><input type="button" id="play" value= (300,1.7) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_23');"><input type="button" id="play" value= (400,1.7) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_24');"><input type="button" id="play" value= (500,1.7) class="btn btn-full"></a><br /> 
+</td>
+</tr>
+<tr>
+<td>
+<a href="javascript:play_multi_sound('multiaudio_25');"><input type="button" id="play" value= (0,1.6) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_26');"><input type="button" id="play" value= (100,1.6) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_27');"><input type="button" id="play" value= (200,1.6) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_28');"><input type="button" id="play" value= (300,1.6) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_29');"><input type="button" id="play" value= (400,1.6) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_30');"><input type="button" id="play" value= (500,1.6) class="btn btn-full"></a><br /> 
+</td>
+</tr>
+<tr>
+<td>
+<a href="javascript:play_multi_sound('multiaudio_31');"><input type="button" id="play" value= (0,1.5) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_32');"><input type="button" id="play" value= (100,1.5) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_33');"><input type="button" id="play" value= (200,1.5) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_34');"><input type="button" id="play" value= (300,1.5) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_35');"><input type="button" id="play" value= (400,1.5) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_36');"><input type="button" id="play" value= (500,1.5) class="btn btn-full"></a><br /> 
+</td>
+</tr>
+<tr>
+<td>
+<a href="javascript:play_multi_sound('multiaudio_37');"><input type="button" id="play" value= (0,1.4) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_38');"><input type="button" id="play" value= (100,1.4) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_39');"><input type="button" id="play" value= (200,1.4) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_40');"><input type="button" id="play" value= (300,1.4) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_41');"><input type="button" id="play" value= (400,1.4) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_42');"><input type="button" id="play" value= (500,1.4) class="btn btn-full"></a><br /> 
+</td>
+</tr>
+<tr>
+<td>
+<a href="javascript:play_multi_sound('multiaudio_43');"><input type="button" id="play" value= (0,1.3) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_44');"><input type="button" id="play" value= (100,1.3) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_45');"><input type="button" id="play" value= (200,1.3) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_46');"><input type="button" id="play" value= (300,1.3) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_47');"><input type="button" id="play" value= (400,1.3) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_48');"><input type="button" id="play" value= (500,1.3) class="btn btn-full"></a><br /> 
+</td>
+</tr>
+<tr>
+<td>
+<a href="javascript:play_multi_sound('multiaudio_49');"><input type="button" id="play" value= (0,1.2) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_50');"><input type="button" id="play" value= (100,1.2) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_51');"><input type="button" id="play" value= (200,1.2) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_52');"><input type="button" id="play" value= (300,1.2) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_53');"><input type="button" id="play" value= (400,1.2) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_54');"><input type="button" id="play" value= (500,1.2) class="btn btn-full"></a><br /> 
+</td>
+</tr>
+<tr>
+<td>
+<a href="javascript:play_multi_sound('multiaudio_55');"><input type="button" id="play" value= (0,1.1) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_56');"><input type="button" id="play" value= (100,1.1) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_57');"><input type="button" id="play" value= (200,1.1) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_58');"><input type="button" id="play" value= (300,1.1) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_59');"><input type="button" id="play" value= (400,1.1) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_60');"><input type="button" id="play" value= (500,1.1) class="btn btn-full"></a><br /> 
+</td>
+</tr>
+<tr>
+<td>
+<a href="javascript:play_multi_sound('multiaudio_61');"><input type="button" id="play" value= (0,1) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_62');"><input type="button" id="play" value= (100,1) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_63');"><input type="button" id="play" value= (200,1) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_64');"><input type="button" id="play" value= (300,1) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_65');"><input type="button" id="play" value= (400,1) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_66');"><input type="button" id="play" value= (500,1) class="btn btn-full"></a><br /> 
+</td>
+</tr>
+<tr>
+<td>
+<a href="javascript:play_multi_sound('multiaudio_67');"><input type="button" id="play" value= (0,0.9) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_68');"><input type="button" id="play" value= (100,0.9) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_69');"><input type="button" id="play" value= (200,0.9) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_70');"><input type="button" id="play" value= (300,0.9) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_71');"><input type="button" id="play" value= (400,0.9) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_72');"><input type="button" id="play" value= (500,0.9) class="btn btn-full"></a><br /> 
+</td>
+</tr>
+<tr>
+<td>
+<a href="javascript:play_multi_sound('multiaudio_73');"><input type="button" id="play" value= (0,0.8) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_74');"><input type="button" id="play" value= (100,0.8) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_75');"><input type="button" id="play" value= (200,0.8) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_76');"><input type="button" id="play" value= (300,0.8) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_77');"><input type="button" id="play" value= (400,0.8) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_78');"><input type="button" id="play" value= (500,0.8) class="btn btn-full"></a><br /> 
+</td>
+</tr>
+<tr>
+<td>
+<a href="javascript:play_multi_sound('multiaudio_79');"><input type="button" id="play" value= (0,0.7) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_80');"><input type="button" id="play" value= (100,0.7) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_81');"><input type="button" id="play" value= (200,0.7) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_82');"><input type="button" id="play" value= (300,0.7) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_83');"><input type="button" id="play" value= (400,0.7) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_84');"><input type="button" id="play" value= (500,0.7) class="btn btn-full"></a><br /> 
+</td>
+</tr>
+<tr>
+<td>
+<a href="javascript:play_multi_sound('multiaudio_85');"><input type="button" id="play" value= (0,0.6) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_86');"><input type="button" id="play" value= (100,0.6) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_87');"><input type="button" id="play" value= (200,0.6) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_88');"><input type="button" id="play" value= (300,0.6) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_89');"><input type="button" id="play" value= (400,0.6) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_90');"><input type="button" id="play" value= (500,0.6) class="btn btn-full"></a><br /> 
+</td>
+</tr>
+<tr>
+<td>
+<a href="javascript:play_multi_sound('multiaudio_91');"><input type="button" id="play" value= (0,0.5) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_92');"><input type="button" id="play" value= (100,0.5) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_93');"><input type="button" id="play" value= (200,0.5) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_94');"><input type="button" id="play" value= (300,0.5) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_95');"><input type="button" id="play" value= (400,0.5) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_96');"><input type="button" id="play" value= (500,0.5) class="btn btn-full"></a><br /> 
+</td>
+</tr>
+<tr>
+<td>
+<a href="javascript:play_multi_sound('multiaudio_97');"><input type="button" id="play" value= (0,0.4) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_98');"><input type="button" id="play" value= (100,0.4) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_99');"><input type="button" id="play" value= (200,0.4) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_100');"><input type="button" id="play" value= (300,0.4) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_101');"><input type="button" id="play" value= (400,0.4) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_102');"><input type="button" id="play" value= (500,0.4) class="btn btn-full"></a><br /> 
+</td>
+</tr>
+<tr>
+<td>
+<a href="javascript:play_multi_sound('multiaudio_103');"><input type="button" id="play" value= (0,0.3) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_104');"><input type="button" id="play" value= (100,0.3) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_105');"><input type="button" id="play" value= (200,0.3) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_106');"><input type="button" id="play" value= (300,0.3) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_107');"><input type="button" id="play" value= (400,0.3) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_108');"><input type="button" id="play" value= (500,0.3) class="btn btn-full"></a><br /> 
+</td>
+</tr>
+<tr>
+<td>
+<a href="javascript:play_multi_sound('multiaudio_109');"><input type="button" id="play" value= (0,0.2) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_110');"><input type="button" id="play" value= (100,0.2) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_111');"><input type="button" id="play" value= (200,0.2) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_112');"><input type="button" id="play" value= (300,0.2) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_113');"><input type="button" id="play" value= (400,0.2) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_114');"><input type="button" id="play" value= (500,0.2) class="btn btn-full"></a><br /> 
+</td>
+</tr>
+<tr>
+<td>
+<a href="javascript:play_multi_sound('multiaudio_115');"><input type="button" id="play" value= (0,0.1) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_116');"><input type="button" id="play" value= (100,0.1) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_117');"><input type="button" id="play" value= (200,0.1) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_118');"><input type="button" id="play" value= (300,0.1) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_119');"><input type="button" id="play" value= (400,0.1) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_120');"><input type="button" id="play" value= (500,0.1) class="btn btn-full"></a><br /> 
+</td>
+</tr>
+<tr>
+<td>
+<a href="javascript:play_multi_sound('multiaudio_121');"><input type="button" id="play" value= (0,0) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_122');"><input type="button" id="play" value= (100,0) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_123');"><input type="button" id="play" value= (200,0) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_124');"><input type="button" id="play" value= (300,0) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_125');"><input type="button" id="play" value= (400,0) class="btn btn-full"></a><br /> 
+</td><td>
+<a href="javascript:play_multi_sound('multiaudio_126');"><input type="button" id="play" value= (500,0) class="btn btn-full"></a><br /> 
+</td>
+</tr>
+</table>
+    <br/>
+    <hr>    
+</div>
+        </body>
+    
+    <script type="text/javascript">
+  var channel_max = 1;                   // number of channels
+  audiochannels = new Array();
+  for (a=0;a<channel_max;a++) {                 // prepare the channels
+    audiochannels[a] = new Array();
+    audiochannels[a]['channel'] = new Audio();            // create a new audio object
+    audiochannels[a]['finished'] = -1;              // expected end time for this channel
+  }
+  function play_multi_sound(s) {
+    for (a=0;a<audiochannels.length;a++) {
+      thistime = new Date();
+      if (audiochannels[a]['finished'] < thistime.getTime()) {      // is this channel finished?
+        audiochannels[a]['finished'] = thistime.getTime() + document.getElementById(s).duration*1000;
+        audiochannels[a]['channel'].src = document.getElementById(s).src;
+        audiochannels[a]['channel'].load();
+        audiochannels[a]['channel'].play();
+        break;
+      }
+    }
+  }
+</script>
+    
+</html>
