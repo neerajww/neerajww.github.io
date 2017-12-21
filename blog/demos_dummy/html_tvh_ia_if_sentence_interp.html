@@ -1,6 +1,59 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html> 
+<html> 
+<head>
+    <meta charset="utf-8">
+    <title>Word Morphing</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+  
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,700|Roboto:400,900" rel="stylesheet">
+    
+    <!-- Bootstrap CSS File -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+  
+    <!--
+     Libraries CSS Files 
+    <link href="Bell/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    -->
+    
+    <!--     Main Stylesheet File -->
+    <link href="1css/style.css" rel="stylesheet">
+    
+    <!--     Button Shake Stylesheet File -->
+    <link href="1css/csshake.min.css" rel="stylesheet">
+    
+    <!-- <raygon> -->
+    <!-- 1) Import jQuery from Google CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <!-- 2) Import HeadphoneCheck.js (minified) from McDermott S3 server -->
+    <script type="text/javascript" src="https://s3.amazonaws.com/mcd-headphone-check/v1.0/src/HeadphoneCheck.min.js"></script>
+    <!-- 2) Import HeadphoneCheck.css from McDermott S3 server -->
+    <link rel="stylesheet" type="text/css" href="https://s3.amazonaws.com/mcd-headphone-check/v1.0/src/HeadphoneCheckStyle.css">
+    <!-- </raygon> -->
+    
+</head>
 <body>
+<div class="container text-center">      
+        <br/>
+        <h2>Interpolating between two spoken sentences</h2>
+    </div>
+<div class="container text-center">      
+<p>
+To listen the resulting sounds, you can use the tiled presentation below.
+Each tab in the tiling below corresponds to a synthesized speech utterance by morphing two sound recordings. The recordings correspond to the same sentence - /When the sunlight strikes raindrops on the air/, spoken by two different male speakers.<br/>
+<samp>(x,y) indicates the relative contribution drawn from (FM, AM).
+    </samp>
+    You can listen to the orginal recordings at (0,0) and at (1,1). Rest all tiles are morphed sounds.
+    </p>
+
+</div>
+    
+<div class="container text-center">     
+    <hr>
+    
 <audio id="multiaudio_a1" src="../../media/audio/data/qhd/sentence/m_m/INTERP_v1_ia_1_0_if_0_0_MTalker_1_sent_1.wav" preload="auto"></audio> 
 <audio id="multiaudio_a2" src="../../media/audio/data/qhd/sentence/m_m/INTERP_v1_ia_1_0_if_0_1_MTalker_1_sent_1.wav" preload="auto"></audio> 
 <audio id="multiaudio_a3" src="../../media/audio/data/qhd/sentence/m_m/INTERP_v1_ia_1_0_if_0_2_MTalker_1_sent_1.wav" preload="auto"></audio> 
@@ -399,3 +452,33 @@
 </td>
 </tr>
 </table>
+    
+<br/>
+<hr>
+</div>
+    
+        </body>
+    
+    <script type="text/javascript">
+  var channel_max = 1;                   // number of channels
+  audiochannels = new Array();
+  for (a=0;a<channel_max;a++) {                 // prepare the channels
+    audiochannels[a] = new Array();
+    audiochannels[a]['channel'] = new Audio();            // create a new audio object
+    audiochannels[a]['finished'] = -1;              // expected end time for this channel
+  }
+  function play_multi_sound(s) {
+    for (a=0;a<audiochannels.length;a++) {
+      thistime = new Date();
+      if (audiochannels[a]['finished'] < thistime.getTime()) {      // is this channel finished?
+        audiochannels[a]['finished'] = thistime.getTime() + document.getElementById(s).duration*1000;
+        audiochannels[a]['channel'].src = document.getElementById(s).src;
+        audiochannels[a]['channel'].load();
+        audiochannels[a]['channel'].play();
+        break;
+      }
+    }
+  }
+</script>
+    
+</html>
