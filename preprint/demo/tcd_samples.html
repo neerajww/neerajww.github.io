@@ -1,0 +1,103 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<html lang="en">
+<script language="javascript" type="text/javascript">
+function showHide(shID) {
+   if (document.getElementById(shID)) {
+      if (document.getElementById(shID+'-show').style.display != 'none') {
+         document.getElementById(shID+'-show').style.display = 'none';
+         document.getElementById(shID).style.display = 'block';
+      }
+      else {
+         document.getElementById(shID+'-show').style.display = 'inline';
+         document.getElementById(shID).style.display = 'none';
+      }
+   }
+}
+</script>
+
+<style type="text/css">
+   /* This CSS is used for the Show/Hide functionality. */
+   .more {
+      display: none;
+      border-top: 1px solid #666;
+      border-bottom: 1px solid #666; }
+   a.showLink, a.hideLink {
+      text-decoration: none;
+      color: #36f;
+      padding-left: 8px;
+      background: transparent url(down.gif) no-repeat left; }
+   a.hideLink {
+      background: transparent url(up.gif) no-repeat left; }
+   a.showLink:hover, a.hideLink:hover {
+      border-bottom: 1px dotted #36f; }
+</style>
+
+
+<head>
+    <title>neeks| CMU-IISc </title>
+    <!-- <link rel="stylesheet" href="style_demo.css" type="text/css" media="screen" />-->
+    <link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+		 <script src='jquery.js' type="text/javascript"></script>
+</head>
+<body>
+<div id="footer-container">
+    <div id="footer">
+        <font face="Calibri"><b>Talker change detection: A comparison of human and machine performance</b>
+        </font>
+    </div>
+</div>
+
+<div id="content-container">
+	<div id="content-container2">
+		<div id="content-container3">
+			<div id="content">
+				<h2> Few samples from the stimuli set:</h2>
+Test 3: Talker change detection
+<a href="#" id="example1-show" class="showLink" onclick="showHide('example1');return false;">Click here.</a>
+<div id="example1" class="more">
+<p><a href="#" id="example1-hide" class="hideLink" onclick="showHide('example1');return false;">Hide this content.</a></p>
+
+<table>
+<tr><td><b>T1-T2</td></tr><tr><td><br><audio controls><source src="sound_samples/hfs/speech/PSM_HFS_psm_0.5_vBW_am_100Hz_vBW_fm_100Hz_uBW_am_2000Hz_uBW_fm_2000Hz_syn_nharm_30_sub_01_set_2_a_snippet_1_normal.wav" type="audio/wav">Your browser does not support the MP3 audio element.</audio></td></tr><tr><td><b>T2-T3</td></tr><tr><td><br><audio controls><source src="sound_samples/hfs/speech/PSM_HFS_psm_0.85_vBW_am_100Hz_vBW_fm_100Hz_uBW_am_2000Hz_uBW_fm_2000Hz_syn_nharm_30_sub_01_set_2_a_snippet_1_normal.wav" type="audio/wav">Your browser does not support the MP3 audio element.</audio></td></tr><tr><td><b>T3-T4</td></tr><tr><td><br><audio controls><source src="sound_samples/hfs/speech/PSM_HFS_psm_1.15_vBW_am_100Hz_vBW_fm_100Hz_uBW_am_2000Hz_uBW_fm_2000Hz_syn_nharm_30_sub_01_set_2_a_snippet_1_normal.wav" type="audio/wav">Your browser does not support the MP3 audio element.</audio></td></tr><tr><td><b>T4-T5</td></tr><tr><td><br><audio controls><source src="sound_samples/hfs/speech/PSM_HFS_psm_1.5_vBW_am_100Hz_vBW_fm_100Hz_uBW_am_2000Hz_uBW_fm_2000Hz_syn_nharm_30_sub_01_set_2_a_snippet_1_normal.wav" type="audio/wav">Your browser does not support the MP3 audio element.</audio></td></tr><tr><td><b>T1-T1</td></tr><tr><td><br><audio controls><source src="sound_samples/hfs/speech/PSM_HFS_psm_1.5_vBW_am_100Hz_vBW_fm_100Hz_uBW_am_2000Hz_uBW_fm_2000Hz_syn_nharm_30_sub_01_set_2_a_snippet_1_normal.wav" type="audio/wav">Your browser does not support the MP3 audio element.</audio></td></tr>
+</table> 
+<p><a href="#" id="example1-hide" class="hideLink" onclick="showHide('example1');return false;">Hide this content.</a></p>
+</div>
+
+Test 2: Tone frequency change detection
+<a href="#" id="example2-show" class="showLink" onclick="showHide('example2');return false;">Click here.</a>
+<div id="example2" class="more">
+<p><a href="#" id="example2-hide" class="hideLink" onclick="showHide('example2');return false;">Hide this content.</a></p>
+
+<table>
+<tr><td><b>Delta = 0</td></tr><tr><td><br><audio controls><source src="sound_samples/hfs/speech/PSM_HFS_psm_0.5_vBW_am_50Hz_vBW_fm_50Hz_uBW_am_2000Hz_uBW_fm_2000Hz_syn_nharm_30_sub_02_set_2_a_snippet_1_normal.wav" type="audio/wav">Your browser does not support the MP3 audio element.</audio></td></tr><tr><td><b>Delta = 10</td></tr><tr><td><br><audio controls><source src="sound_samples/hfs/speech/PSM_HFS_psm_0.85_vBW_am_50Hz_vBW_fm_50Hz_uBW_am_2000Hz_uBW_fm_2000Hz_syn_nharm_30_sub_02_set_2_a_snippet_1_normal.wav" type="audio/wav">Your browser does not support the MP3 audio element.</audio></td></tr><tr><td><b>Delta = 25</td></tr><tr><td><br><audio controls><source src="sound_samples/hfs/speech/PSM_HFS_psm_1.15_vBW_am_50Hz_vBW_fm_50Hz_uBW_am_2000Hz_uBW_fm_2000Hz_syn_nharm_30_sub_02_set_2_a_snippet_1_normal.wav" type="audio/wav">Your browser does not support the MP3 audio element.</audio></td></tr><tr><td><b>Delta = 50</td></tr><tr><td><br><audio controls><source src="sound_samples/hfs/speech/PSM_HFS_psm_1.5_vBW_am_50Hz_vBW_fm_50Hz_uBW_am_2000Hz_uBW_fm_2000Hz_syn_nharm_30_sub_02_set_2_a_snippet_1_normal.wav" type="audio/wav">Your browser does not support the MP3 audio element.</audio></td></tr><tr><td><b>Delta = 100</td></tr><tr><td><br><audio controls><source src="sound_samples/hfs/speech/PSM_HFS_psm_2_vBW_am_50Hz_vBW_fm_50Hz_uBW_am_2000Hz_uBW_fm_2000Hz_syn_nharm_30_sub_02_set_2_a_snippet_1_normal.wav" type="audio/wav">Your browser does not support the MP3 audio element.</audio></td></tr>
+</table> 
+<p><a href="#" id="example2-hide" class="hideLink" onclick="showHide('example2');return false;">Hide this content.</a></p>
+</div>
+
+Test 1: Noise to tone change detection
+<a href="#" id="example3-show" class="showLink" onclick="showHide('example3');return false;">Click here.</a>
+<div id="example3" class="more">
+<p><a href="#" id="example3-hide" class="hideLink" onclick="showHide('example3');return false;">Hide this content.</a></p>
+
+<table>
+<tr><td><b>Instance 1</td></tr><tr><td><br><audio controls><source src="sound_samples/hfs/speech/PSM_HFS_psm_0.5_vBW_am_70Hz_vBW_fm_70Hz_uBW_am_2000Hz_uBW_fm_2000Hz_syn_nharm_30_ichappel_snippet-01.wav" type="audio/wav">Your browser does not support the MP3 audio element.</audio></td></tr><tr><td><b>Instance 2</td></tr><tr><td><br><audio controls><source src="sound_samples/hfs/speech/PSM_HFS_psm_0.85_vBW_am_70Hz_vBW_fm_70Hz_uBW_am_2000Hz_uBW_fm_2000Hz_syn_nharm_30_ichappel_snippet-01.wav" type="audio/wav">Your browser does not support the MP3 audio element.</audio></td></tr><tr><td><b>Pitch scaled by: 1.15</td></tr>
+</table> 
+<p><a href="#" id="example3-hide" class="hideLink" onclick="showHide('example3');return false;">Hide this content.</a></p>
+</div>
+
+</div>
+</div>
+
+<div id="footer-container">
+		<div id="footer">
+                     <font face="Calibri"><i>&copy; Copyright Neeks <a title="Styleshout" href="http://ece.iisc.ernet.in/~neeraj_sharma">Neeraj Sharma</a></i>
+                     </font>
+                </div>
+</div>
+</body>
+</html>
+
+
+	 
