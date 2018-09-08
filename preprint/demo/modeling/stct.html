@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Neeks@IISc</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/animate.min.css" rel="stylesheet"> 
+  <link href="css/font-awesome.min.css" rel="stylesheet">
+  <link href="css/lightbox.css" rel="stylesheet">
+  <link href="css/main.css" rel="stylesheet">
+  <link id="css-preset" href="css/presets/preset1.css" rel="stylesheet">
+  <link href="css/responsive.css" rel="stylesheet">
+
+<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+
+  <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+  <![endif]-->
+  
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
+  <link rel="shortcut icon" href="images/favicon.ico">
+</head><!--/head-->
+
+<body>
+
+  <!--.preloader-->
+<!--  <div class="preloader"> <i class="fa fa-circle-o-notch fa-spin"></i></div>-->
+  <!--/.preloader-->
+
+  <header id="home">
+    <div id="home-slider" class="carousel slide carousel-fade" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="item active" style="background-image: url(images/slider/1.png)">
+          <div class="caption">
+            <h1 class="animated fadeInLeftBig">Short-time <span>Chebyshev Transform</span></h1>
+            <p class="animated fadeInRightBig">Time-domain processing</p>
+            <a data-scroll class="btn btn-start animated fadeInUpBig" href="#approach">Fitting orthogonal polynomial basis</a>
+          </div>
+        </div>
+<!--        <div class="item" style="background-image: url(images/slider/2.jpg)">
+          <div class="caption">
+            <h1 class="animated fadeInLeftBig">Say Hello to <span>Oxygen</span></h1>
+            <p class="animated fadeInRightBig">Bootstrap - Responsive Design - Retina Ready - Parallax</p>
+            <a data-scroll class="btn btn-start animated fadeInUpBig" href="#approach">Start now</a>
+          </div>
+        </div>
+        <div class="item" style="background-image: url(images/slider/3.jpg)">
+          <div class="caption">
+            <h1 class="animated fadeInLeftBig">We are <span>Creative</span></h1>
+            <p class="animated fadeInRightBig">Bootstrap - Responsive Design - Retina Ready - Parallax</p>
+            <a data-scroll class="btn btn-start animated fadeInUpBig" href="#approach">Start now</a>
+          </div>
+        </div>-->
+      </div>
+      <a class="left-control" href="#home-slider" data-slide="prev"><i class="fa fa-angle-left"></i></a>
+      <a class="right-control" href="#home-slider" data-slide="next"><i class="fa fa-angle-right"></i></a>
+
+      <a id="tohash" href="#approach"><i class="fa fa-angle-down"></i></a>
+
+    </div><!--/#home-slider-->
+    <div class="main-nav">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">
+            <h1><img class="img-responsive" src="images/logo.png" alt="logo"></h1>
+          </a>                    
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">                 
+            <li class="scroll active"><a href="#home">Home</a></li>
+            <li class="scroll"><a href="#approach">Approach</a></li> 
+            <li class="scroll"><a href="#analysis">Analysis</a></li>
+            <li class="scroll"><a href="#quantization">Quantization</a></li>
+            <li class="scroll"><a href="#elements">Elements</a></li>
+            <li class="scroll"><a href="#scaletime">Scale time</a></li>
+            <li class="scroll"><a href="#dictionary">Dictionary</a></li>
+            <li class="scroll"><a href="#discriminability">Discriminability</a></li>
+            <li class="scroll"><a href="#csampling">Compressive Sampling</a></li>
+            </ul>
+        </div>
+      </div>
+    </div><!--/#main-nav-->
+  </header><!--/#home-->
+  <section id="approach">
+    <div class="container">
+      <div class="heading wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
+        <div class="row">
+          <div class="text-left col-sm-8 col-sm-offset-2">
+            <h2>Proposed Approach</h2>
+            <p><b>Signal representation</b> is a classic problem in signal processing. A beautiful approach has been using sinusoidal functions (example Fourier series)
+            as othogonal and complete basis for periodic signal representations. The approach is beautiful because very often this representation makes
+            physical sense. Broadening the domain of 'kinds of signals', natural signals such as speech are non-stationary.
+            This is because the attributes of the underlying signal generator are time-varying (example, vocal tract length varies as we speak).
+            The Fourier series (and other periodic series) approach are unable to model this time-varyingness, and fail to serve as a physically
+            meaningful representation of the signal.
+            An alternative widely adopted is the short-time analysis of non-stationary signals. It is assumed that in each short-time frame
+            the signal is stationary. Thus, the Fourier series representation in each frame begins to make sense.
+            Celebrated techniques, output of such an approach, include spectrogram (or STFT), and linear prediction coding (LPC).
+            
+            <br>
+            <b>We propose</b> an alternate short-time representation of speech based on Chebyshev polynomial basis.
+               Why Chebsyshev polynomial basis? They are orthogonal (in [-1,1]), oscillatory, and have several nice properties for function approximation.
+               To know <a href = https://en.wikipedia.org/wiki/Chebyshev_polynomials>click here</a>.
+               Further as representations, they are particularly suited for non-periodic boundary conditions, have no Runge phenomenon
+               in interploation, and give a least squares approximation close to minimax one in the class of polynomials (like, Vandermode, Legendre,
+               Hermite, cardinal series, ...).
+            </p>
+   
+            <br>
+            <b>Steps</b>
+            <ul class="fa-ul">
+	      <li><i class="fa-li fa fa-check-square"></i> Take speech signal (sampled at Fs)</li>.
+	      <li><i class="fa-li fa fa-check-square"></i> Make <i>wmsec</i> duration short-time segments (non-overlapping, let nos. be M)</li>.
+	      <li><i class="fa-li fa fa-check-square"></i> Set order of polynomial representation to N (or degree N). Obtain the roots grid samples in each segment via sinc interpolation.
+	           Root grid sampling instants are non-unifromly spaced and are defined by the roots of the N-th Chebyshev basis
+	           (in the interval [-1,1]).</li>
+              <li><i class="fa-li fa fa-check-square"></i> Do a least-squares fitting of the segment using Chebyshev basis and roots grid samples.
+                   Store the N+1 Chebsyshev basis coefficients thus obtained in each of the M segments into a matrix.
+              <li><i class="fa-li fa fa-check-square"></i> The matrix, let it be named C, thus obatained is the short-time Chebyshev transform of the signal.
+              <li><i class="fa-li fa fa-check-square"></i> Given C, the trasnform is invertible and thus can serve as a useful representation.
+             </ul>
+            <br>
+            <i class="fa fa-quote-left fa-3x fa-pull-left fa-border"></i>
+	    <b>Example:</b> <i>[from top to bottom]</i> the figure below illustrates a signal, its abs(C) matrix, and its spectrogram.
+	    Here, Fs = 16k samples/sec, <i>wmsec</i> = 2.5 msec,	    and N = 17. The signal is a femake speech signal taken from TIMIT dataset.
+	    <div class="folio-image">
+              <img class="img-responsive" src="images/stct/example_stct_spectgm_16kHz.png" alt="">
+	    </div>
+	    Mathematically, the reprsentation we propose, for each segment, is, $$x(t)=\displaystyle\sum_{k=0}^{N}a_kT_k(t)$$
+	    where, each basis element T_k(x) is multiplied with the corresponding coefficient a_k.
+	    <br>
+	    From the above figure we can note that,
+	    <ul class="fa-ul">
+	      <li><i class="fa fa-hand-o-right"></i> each 40 samples (= 2.5msec x Fs) segment is represented with a 17 (= N+1) dimensional vector.</li>
+	      <li><i class="fa fa-hand-o-right"></i> the represenation can be inverted, that is we have
+	            $$x(t)\rightarrow C \rightarrow y(t)$$.</li>
+	      <li><i class="fa fa-hand-o-right"></i> higher basis elements are active usually for fricative regions in speech.</li>
+	      <li><i class="fa fa-hand-o-right"></i> lower basis elements are active usually for voiced regions in speech.</li>
+	    </ul>
+	    Below are the corresponding sound files.
+		<h3>[Original Signal, x(t)]</h3>
+		<audio controls>
+		  <source src="sound/poly_fit/examples/recons/orig_mic_F01_sa1.wav" type="audio/wav">
+		  Your browser does not support the audio element.
+		</audio>[Fs = 16000 sample/sec]
+		<h3>[Reconstructed, y(t)]</h3>
+		<audio controls>
+		  <source src="sound/poly_fit/examples/recons/Fitting_ChDeg_16_FDur_0_0ms_mic_F01_sa1.wav" type="audio/wav">
+		  Your browser does not support the audio element.
+		</audio>[wmsec = 2.5 msec, and N = 17]
+	      
+            So,
+            <br>
+               <b>y(t) is intelligible but has perceivable distortion</b>. Below we plot the error signal (bottom plot below the spectrogram).
+	    <div class="folio-image">
+              <img class="img-responsive" src="images/stct/example_stct_error_spectgm_16kHz.png" alt="">
+	    </div>
+            The distortion is particularly high in fricative portions.
+            This is due to poor fitting of the polynomial to the waveform with N = 17 to fast signal variations. Below figure shows a least squares fit in a segment.
+            It can be observed that the fast variations are not fit well.
+	    <div class="folio-image">
+              <img class="img-responsive" src="images/stct/example_segment_cheb_fit_16kHz.png" alt="">
+	    </div>
+	    
+	    This poor fitting can be improved by increasing the order of the polynomial.
+        </div> 
+      </div>
+    </div>    
+  </section><!--/#approach-->
+  <section id="analysis">
+    <div class="container">
+      <div class="heading wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
+      <div class="row">
+          <div class="text-left col-sm-8 col-sm-offset-2">
+            <h2>Analysis</h2>
+            <p><b>The proposed representation</b> can be analyzed for - how the speech is encoded in the basis coefficients?.
+            <br>
+            <i class="fa fa-quote-left fa-3x fa-pull-left fa-border"></i>
+	    <b>Example:</b> We consider 240 secs of speech of two speakers (male and female) sampled at Fs =- 48000 samples/sec. The signals is represented with the proposed
+            approach taking N = 37 order Chebyshev polynomial.
+            Using a higher order improves the quality of reconstruction as can be heard in the sound samples snippets.
+            <h3>[Original Signal, x(t)]</h3>
+		<audio controls>
+		  <source src="sound/poly_fit/examples/recons/orig_starkey.wav" type="audio/wav">
+		  Your browser does not support the audio element.
+		</audio>[Fs = 48000 samples/sec]
+            <h3>[Reconstructed Signal, x(t)]</h3>
+		<audio controls>
+		  <source src="sound/poly_fit/examples/recons/Fitting_ChDeg_37_FDur_2_5ms_starkey.wav" type="audio/wav">
+		  Your browser does not support the audio element.
+		</audio>[Fs = 48000 samples/sec]
+            Below we show some simple statistics related to each of the 37 coeffients. 
+            <div class="folio-image">
+            <h3>Chebsyshev coefficients energy distribution:</h3>
+	     <img class="img-responsive" src="images/stct/coeffs_energy_distribution.jpg" alt="">
+	    </div>
+            <div class="folio-image">
+            <h3>Chebsyshev coefficients amplitude distribution:</h3>
+	      <img class="img-responsive" src="images/stct/histogram_starkey_speech_M_F.png" alt="">
+	    </div>
+	    <div class="folio-image">
+            <h3>Chebsyshev coefficients average amplitude and standard deviation:</h3>
+	      <img class="img-responsive" src="images/stct/coeffs_average_value.png" alt="">
+	    </div>
+	    
+          </div>
+      </div> 
+      </div>
+    </div>    
+  </section><!--/#analysis-->
+
+  <section id="quantization">
+    <div class="container">
+      <div class="heading wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
+      <div class="row">
+          <div class="text-left col-sm-8 col-sm-offset-2">
+            <h2>Quantization</h2>
+            <p><b>Here, we try quantizing the representation</b>. The Chebyshev coefficients amplitude distribution shows that most of the amplitudes have a small
+            dynamic range and peak at zero. None of the coefficient has a PDF for amplitude ditribution as uniform.
+            Nevertheless, quantizing with a uniform quantizer at 4 bits-per-coeffcient we get the below reconstrcuted signal.
+            <h3>[Reconstructed Signal, y(t)]</h3>
+		<audio controls>
+		  <source src="sound/poly_fit/examples/quantz/quant_4bits_mulaw_0_orig_mic_F01_sa1.wav" type="audio/wav">
+		  Your browser does not support the audio element.
+		</audio>[Fs = 48000 samples/sec, 4 bits-per-coeffcient]
+            <br>
+            It is evident that uniform quantization is not the right choice.
+            We pre-process the coefficients amplitudes using a mu-law companding.
+            The mu-law companding for increasing value of mu is shown below. The linear curve is for mu=0 that is no companding.
+              <img class="img-responsive" src="images/stct/mu_law_curve.png" alt="">
+            Next, below we show the PDF (apprximated using histogram) of amplitude distribution after a mu-law companding with mu = 1024 is shown below.
+            The signal is the same 240 sec duratiom of speech analysed earlier.
+              <img class="img-responsive" src="images/stct/histogram_mulaw_1024_starkey_speech_M_F.png" alt="">
+	    The ditribution is less peakier now. The resulting quantized signal after making use this companding (at 4 bits per coeffcient) can be heard below.
+	    <h3>[Reconstructed Signal, y(t)]</h3>
+		<audio controls>
+		  <source src="sound/poly_fit/examples/quantz/quant_4bits_mulaw_1024_orig_mic_F01_sa1.wav" type="audio/wav">
+		  Your browser does not support the audio element.
+		</audio>[Fs = 48000 samples/sec, 4 bits-per-coeffcient]
+	        <audio controls>
+		  <source src="sound/poly_fit/examples/quantz/quant_5bits_mulaw_1024_orig_mic_F01_sa1.wav" type="audio/wav">
+		  Your browser does not support the audio element.
+		</audio>[Fs = 48000 samples/sec, 5 bits-per-coeffcient]
+	        <audio controls>
+		  <source src="sound/poly_fit/examples/quantz/quant_6bits_mulaw_1024_orig_mic_F01_sa1.wav" type="audio/wav">
+		  Your browser does not support the audio element.
+		</audio>[Fs = 48000 samples/sec, 6 bits-per-coeffcient]
+	        <audio controls>
+		  <source src="sound/poly_fit/examples/quantz/quant_7bits_mulaw_1024_orig_mic_F01_sa1.wav" type="audio/wav">
+		  Your browser does not support the audio element.
+		</audio>[Fs = 48000 samples/sec, 7 bits-per-coeffcient]
+	        <audio controls>
+		  <source src="sound/poly_fit/examples/quantz/orig_orig_mic_F01_sa1.wav" type="audio/wav">
+		  Your browser does not support the audio element.
+		</audio>[Fs = 48000 samples/sec, No quantization.]
+          </div>
+      </div> 
+      </div>
+    </div>    
+  </section><!--/#quantization-->
+  
+  <section id="elements">
+    <div class="container">
+      <div class="heading wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
+      <div class="row">
+          <div class="text-left col-sm-8 col-sm-offset-2">
+            <h2>Elements</h2>
+            <p><b>Here, we try to understand the perceptual importance of each basis element</b>.
+            On comparing the short-time Chebyshev representation with spectrogram (on same time-scale, example go back to see the first figure)
+            it is evident that lower basis elements encode vowel features and higher basis elements encode fricative features in speech.
+            However, speech is not just vowel and fricatives but also contains perceivable attributes such as pitch, emotion, speaker information, etc.
+            Below we present some sound files representing the individual elements of the 37 dimenisional representation of a speech file.
+            <h3>[Reconstructed from individial basis elements, y(t)]</h3>
+		<audio controls>
+		  <source src="sound/poly_fit/examples/sel_basis/single/basis_1_only_orig_mic_F01_sa1.wav" type="audio/wav">
+		  Your browser does not support the audio element.
+		</audio>[Fs = 48000 samples/sec, Only basis element 1]
+                <br>
+		<audio controls>
+		  <source src="sound/poly_fit/examples/sel_basis/single/basis_5_only_orig_mic_F01_sa1.wav" type="audio/wav">
+		  Your browser does not support the audio element.
+		</audio>[Fs = 48000 samples/sec, Only Basis element 5]
+                <br>
+		<audio controls>
+		  <source src="sound/poly_fit/examples/sel_basis/single/basis_10_only_orig_mic_F01_sa1.wav" type="audio/wav">
+		  Your browser does not support the audio element.
+		</audio>[Fs = 48000 samples/sec, Only Basis element 10]
+                <br>
+		<audio controls>
+		  <source src="sound/poly_fit/examples/sel_basis/single/basis_15_only_orig_mic_F01_sa1.wav" type="audio/wav">
+		  Your browser does not support the audio element.
+		</audio>[Fs = 48000 samples/sec, Only Basis element 15]
+                <br>
+		<audio controls>
+		  <source src="sound/poly_fit/examples/sel_basis/single/basis_20_only_orig_mic_F01_sa1.wav" type="audio/wav">
+		  Your browser does not support the audio element.
+		</audio>[Fs = 48000 samples/sec, Only Basis element 20]
+                <br>
+		<audio controls>
+		  <source src="sound/poly_fit/examples/sel_basis/single/orig_orig_mic_F01_sa1.wav" type="audio/wav">
+		  Your browser does not support the audio element.
+		</audio>[Fs = 48000 samples/sec, All basis elements]
+		<br>
+		Seems like the individial elements don't sound intelligible but do encode some perceivable correlated information to
+		the original audio signal.
+		Next, we incrementally add basis elements (1 to n1) and listen to them. Below are the sounds.
+            <h3>[Incremental addition of basis elements, y(t)]</h3>
+		<audio controls>
+		  <source src="sound/poly_fit/examples/sel_basis/incremental/basis_1_to_1_orig_mic_F01_sa1.wav" type="audio/wav">
+		  Your browser does not support the audio element.
+		</audio>[Fs = 48000 samples/sec, Basis element 1 to 1]
+                <br>
+		<audio controls>
+		  <source src="sound/poly_fit/examples/sel_basis/incremental/basis_1_to_2_orig_mic_F01_sa1.wav" type="audio/wav">
+		  Your browser does not support the audio element.
+		</audio>[Fs = 48000 samples/sec, Basis elements 1 to 2]
+                <br>
+		<audio controls>
+		  <source src="sound/poly_fit/examples/sel_basis/incremental/basis_1_to_5_orig_mic_F01_sa1.wav" type="audio/wav">
+		  Your browser does not support the audio element.
+		</audio>[Fs = 48000 samples/sec, Basis elements 1 to 5]
+                <br>
+		<audio controls>
+		  <source src="sound/poly_fit/examples/sel_basis/incremental/basis_1_to_10_orig_mic_F01_sa1.wav" type="audio/wav">
+		  Your browser does not support the audio element.
+		</audio>[Fs = 48000 samples/sec, Basis elements 1 to 10]
+                <br>
+		<audio controls>
+		  <source src="sound/poly_fit/examples/sel_basis/incremental/basis_1_to_15_orig_mic_F01_sa1.wav" type="audio/wav">
+		  Your browser does not support the audio element.
+		</audio>[Fs = 48000 samples/sec, Basis elements 1 to 15]
+                <br>
+		<audio controls>
+		  <source src="sound/poly_fit/examples/sel_basis/incremental/basis_1_to_20_orig_mic_F01_sa1.wav" type="audio/wav">
+		  Your browser does not support the audio element.
+		</audio>[Fs = 48000 samples/sec, Basis elements 1 to 20]
+                <br>
+		<audio controls>
+		  <source src="sound/poly_fit/examples/sel_basis/incremental/basis_1_to_30_orig_mic_F01_sa1.wav" type="audio/wav">
+		  Your browser does not support the audio element.
+		</audio>[Fs = 48000 samples/sec, Basis elements 1 to 30]
+                <br>
+		<audio controls>
+		  <source src="sound/poly_fit/examples/sel_basis/incremental/orig_orig_mic_F01_sa1.wav" type="audio/wav">
+		  Your browser does not support the audio element.
+		</audio>[Fs = 48000 samples/sec, Basis elements 1 to 37 (or all elements)]
+		As expected, the intelligible improves with incremental addition of elements.
+		The improvement saturates after 25 to 30 elements.
+		Below we show the spectrogram (with window length = 1024, Fs = 48k) for first 1 to 2, 5, 10, 15, 30 basis elements, and the original (top to bottom in order).
+		It can be observed that the signal harmonics (and harmonics due to basis) get added as we increase the order.
+		Also, the glides in the harmonics start appearing as basis elements get added.
+                <img class="img-responsive" src="images/stct/incremental_basis_addition.png" alt="">
+		Below we show the wideband spectrogram (with window length = 256, Fs = 48k) for first 1 to 2, 5, 10, 15, 30 basis elements, and the original (top to bottom in order).
+                The formant structure appears as basis elements go to 30. Further the transient lipsmack is preserved with 15 basis elements as well.
+                <img class="img-responsive" src="images/stct/incremental_basis_addition_WB.png" alt="">
+		
+		On listening, we observe that the speaker information seem to be absent in the first few basis addition, and
+		enters after close to 15 elements have been added.
+		In summary, some observations follow-up below.
+               <ul class="fa-ul">
+		<li><i class="fa-li fa fa-check-square"></i> information is distributed unevenly amongst the basis elements.</li>
+		<li><i class="fa-li fa fa-check-square"></i> sparsity can potentially be exploited.</li>
+               </ul>
+	  
+	  </div>
+      </div> 
+      </div>
+    </div>    
+  </section><!--/#elements-->
+  
+  <section id="scaletime">
+    <div class="container">
+      <div class="heading wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
+      <div class="row">
+          <div class="text-left col-sm-8 col-sm-offset-2">
+            <h2>Scale time</h2>
+            <p><b>Here, we scale the time domain in the obtained representation</b>.
+            That is, y(t) = x(pt), where 'p' is the scale factor.
+            This operation is analogous to playing the signal x(t=n x Ts) at x(t=n x pTs).
+            While arbitrary 'p' can be choosen in a DSP simulation but this is not a practical option as sound cards don't support any arbitrary clock rate.
+            Instead, scaling the time axis of x(t) keeping Ts fixed seems more practical.
+            Scaling time axis can be done via sinc interpolation for a bandlimited signal. But speech (and audio signal in general) is only locally bandlimited.
+            Hence, the slow decay of sinc kernel is non-optimal when it comes to time-scaling of non-stationary signals such as speech.
+            We make use of the proposed representation for this.
+            That is, to scale time by 'p' we have for each 2.5 msec of the signal,
+            $$y(t)=x(pt)=\displaystyle\sum_{k=0}^{N}a_kT_k(pt).$$
+	    Below are the audio signals obtained using above formulation on different scale factors.
+		<audio controls>
+		  <source src="sound/poly_fit/examples/scaletime/ldict_tscale_0.50_orig_farhan_poetry_3.wav" type="audio/wav">
+		  Your browser does not support the audio element.
+		</audio>[Fs = 48000 samples/sec, p = 0.50]
+                <br>
+		<audio controls>
+		  <source src="sound/poly_fit/examples/scaletime/ldict_tscale_0.75_orig_farhan_poetry_3.wav" type="audio/wav">
+		  Your browser does not support the audio element.
+		</audio>[Fs = 48000 samples/sec, p = 0.75]
+                <br>
+		<audio controls>
+		  <source src="sound/poly_fit/examples/scaletime/ldict_tscale_0.85_orig_farhan_poetry_3.wav" type="audio/wav">
+		  Your browser does not support the audio element.
+		</audio>[Fs = 48000 samples/sec, p = 0.85]
+                <br>
+		<audio controls>
+		  <source src="sound/poly_fit/examples/scaletime/orig_orig_farhan_poetry_3.wav" type="audio/wav">
+		  Your browser does not support the audio element.
+		</audio>[Fs = 48000 samples/sec, No scaling (original audio)]
+                <br>
+		<audio controls>
+		  <source src="sound/poly_fit/examples/scaletime/ldict_tscale_1.15_orig_farhan_poetry_3.wav" type="audio/wav">
+		  Your browser does not support the audio element.
+		</audio>[Fs = 48000 samples/sec, p = 1.15]
+                <br>
+		<audio controls>
+		  <source src="sound/poly_fit/examples/scaletime/ldict_tscale_1.25_orig_farhan_poetry_3.wav" type="audio/wav">
+		  Your browser does not support the audio element.
+		</audio>[Fs = 48000 samples/sec, p = 1.25]
+                <br>
+		<audio controls>
+		  <source src="sound/poly_fit/examples/scaletime/ldict_tscale_1.50_orig_farhan_poetry_3.wav" type="audio/wav">
+		  Your browser does not support the audio element.
+		</audio>[Fs = 48000 samples/sec, p = 1.50]
+                <br>
+		<audio controls>
+		  <source src="sound/poly_fit/examples/scaletime/ldict_tscale_2.00_orig_farhan_poetry_3.wav" type="audio/wav">
+		  Your browser does not support the audio element.
+		</audio>[Fs = 48000 samples/sec, p = 2.00]
+	    <br>It can be perceived, as also should be expected, that the pitch is not preserved.
+	  </div>
+      </div> 
+      </div>
+    </div>    
+  </section><!--/#scaletime-->
+  
+  <section id="dictionary">
+    <div class="container">
+      <div class="heading wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
+      <div class="row">
+          <div class="text-left col-sm-8 col-sm-offset-2">
+            <h2>Dictionary</h2>
+            <p><b>Here, we learn a dictionary using the proposed representation</b>.
+            Let the STCT (short-time Chebyshev represenation) matrix be denoted by C (obtained with 2.5 msec segment size).
+            Dictionary learning involves decomposition of C into product of two matrices D and A such that,
+            $$\|C-DA\|_p$$
+            is minimum.
+            Now, there can be many possibilities for D and A. To make the decomposition useful one option is to enforce sparsity in
+            the columns of A. This will allow D to serve as a pruned sub-space for columns of C.
+            A common set-up used is,
+            $$\arg\min_{D,A}\|C-DA\|_2 \ \mbox{s.t. }\|A\|_{0}\leq K\ .$$
+            Here, D serves as a dictionary to encode C via A. Important parameters are sparsity factor (K), and the dimensions of the matrices.
+            That is,
+            $$C_{n\times m},\ D_{n\times q},\mbox{and}\ A_{q\times m}.$$
+            We will use a 36th order Chebyshev basis represenation, hence n is fixed to 37.
+            Given an audio file, m depends on number of 2.5 msec segments. To learn the dictionary we can play with the parameters q and K.
+            <ul class="fa-ul">
+	      <li><i class="fa-li fa fa-check-square"></i> q>n implies an overcomplete dictionary. This will allow promoting sparsity in columns of A.</li>
+	      <li><i class="fa-li fa fa-check-square"></i> K << q will allow for obtaining sparse representation.</li>
+	      <li><i class="fa-li fa fa-check-square"></i> above two condition make dictionary learning a difficult problem. Iterative approaches have been proposed
+	      to circumvent the problems. <a href = https://en.wikipedia.org/wiki/K-SVD>K-SVD</a>
+	      is one such approach which we will use below to learn our dictionary from the STCT representations.</li>
+	    </ul>
+	    <h3>encoding the representation of unseen speech of same speaker:</h3>
+	    We will learn a dictionary D for a speaker (using approx. 12 secs of speech), and use D as a basis to encode the STCT representation of an unseen
+	    utterance from the same speaker. In the dictionary learning step we have,
+	    $$\arg\min_{D_1,A_1}\|C_1-D_1A_1\|_2 \ \mbox{s.t. }\|A_1\|_{0}\leq K\ .$$
+            We try with K = 3, and set q to 200. That is,
+            $$C_{1, 37\times 7568},\ D_{1,37\times 200},\mbox{and}\ A_{1,200\times 7568},\mbox{with } K = 3.$$
+            Below is a color representation of the learnt decomposition using k-SVD based dictionary learning for K = 3.
+	      <img class="img-responsive" src="images/stct/dictionary/chebyshev_timit_male_dictionary_decomosition.png" alt="">
+            We use 10 iterations of the algorithm. The root mean square error (in Frobenius norm) in approximating
+            C<sub>1</sub> using D<sub>1</sub> and A<sub>1</sub> over the 10 iterations is shown below.
+              <img class="img-responsive" src="images/stct/dictionary/rmse_representation_error.png" alt="">
+            Next we use D<sub>1</sub> to encode an unseen utterance of the same speaker.
+            That is, let C be the STCT of the utterance. Then we find A such that,
+            $$\arg\min_{A}\|C-D_1A\|_2,\ \mbox{s.t. } \|A\|_{0}\leq s.$$
+            The above can be solved using orthogonal matching pursuit (OMP, a sparse representation algorithm).
+            Let the approximated representation of C thus obtained be denoted by C<sub>a</sub>=D<sub>1</sub>A.
+            Using C<sub>a</sub> we reconstruct the uttered signal (via inverting the STCT).
+            Below we present the sound signals (original and reconstructed).
+            The speech signal is a TIMIT sentence not used during dictionary learning.
+            The dictionary was learnt for K = 3. The encoding of the unseen signal is done with s = 1, 5, 10, and 15.
+                <br>
+		<audio controls>
+		  <source src="sound/poly_fit/examples/dictionary/encoding_represen/train_speech_test_speech/same_speaker/orig_orig_sx204.wav" type="audio/wav">
+		  Your browser does not support the audio element.
+		</audio>[Fs = 48000 samples/sec, Original]
+                <br>
+		<audio controls>
+		  <source src="sound/poly_fit/examples/dictionary/encoding_represen/train_speech_test_speech/same_speaker/ldict_37x200_dspars_3_rspars_1_orig_sx204.wav" type="audio/wav">
+		  Your browser does not support the audio element.
+		</audio>[Fs = 48000 samples/sec, K = 3, s = 1]
+                <br>
+		<audio controls>
+		  <source src="sound/poly_fit/examples/dictionary/encoding_represen/train_speech_test_speech/same_speaker/ldict_37x200_dspars_3_rspars_5_orig_sx204.wav" type="audio/wav">
+		  Your browser does not support the audio element.
+		</audio>[Fs = 48000 samples/sec, K = 3, s = 5]
+                <br>
+		<audio controls>
+		  <source src="sound/poly_fit/examples/dictionary/encoding_represen/train_speech_test_speech/same_speaker/ldict_37x200_dspars_3_rspars_10_orig_sx204.wav" type="audio/wav">
+		  Your browser does not support the audio element.
+		</audio>[Fs = 48000 samples/sec, K = 3, s = 10]
+                <br>
+		<audio controls>
+		  <source src="sound/poly_fit/examples/dictionary/encoding_represen/train_speech_test_speech/same_speaker/ldict_37x200_dspars_3_rspars_15_orig_sx204.wav" type="audio/wav">
+		  Your browser does not support the audio element.
+		</audio>[Fs = 48000 samples/sec, K = 3, s = 15]
+		<br>The inteligibility is preserved to little extent even with s=1, and the quaility improves as we descrease the sparsity for reconstruction using the
+		the dictionary (that is increasing s).
+   	    <h3>encoding the representation of solo music instruments using speech dictionary:</h3>
+            We used the above learnt dictionary, that is C<sub>1</sub>, to represent solo music instruments.
+            Below are the signals.
+                <br>
+		<audio controls>
+		  <source src="sound/poly_fit/examples/dictionary/encoding_represen/train_speech_test_music_solo/orig_orig_flute.wav" type="audio/wav">
+		  Your browser does not support the audio element.
+		</audio>[Fs = 48000 samples/sec, Original Flute]
+                <br>
+		<audio controls>
+		  <source src="sound/poly_fit/examples/dictionary/encoding_represen/train_speech_test_music_solo/ldict_37x100_dspars_3_rspars_15_orig_flute.wav" type="audio/wav">
+		  Your browser does not support the audio element.
+		</audio>[Fs = 48000 samples/sec, K = 3, s = 15]
+                <br>
+                <br>
+		<audio controls>
+		  <source src="sound/poly_fit/examples/dictionary/encoding_represen/train_speech_test_music_solo/orig_orig_mari.wav" type="audio/wav">
+		  Your browser does not support the audio element.
+		</audio>[Fs = 48000 samples/sec, Original Mari]
+                <br>
+		<audio controls>
+		  <source src="sound/poly_fit/examples/dictionary/encoding_represen/train_speech_test_music_solo/ldict_37x100_dspars_3_rspars_15_orig_mari.wav" type="audio/wav">
+		  Your browser does not support the audio element.
+		</audio>[Fs = 48000 samples/sec, K = 3, s = 15]
+                <br>
+                <br>
+		<audio controls>
+		  <source src="sound/poly_fit/examples/dictionary/encoding_represen/train_speech_test_music_solo/orig_orig_oboe.wav" type="audio/wav">
+		  Your browser does not support the audio element.
+		</audio>[Fs = 48000 samples/sec, Original Oboe]
+                <br>
+		<audio controls>
+		  <source src="sound/poly_fit/examples/dictionary/encoding_represen/train_speech_test_music_solo/ldict_37x100_dspars_3_rspars_15_orig_oboe.wav" type="audio/wav">
+		  Your browser does not support the audio element.
+		</audio>[Fs = 48000 samples/sec, K = 3, s = 15]
+                <br>
+                <br>
+		<audio controls>
+		  <source src="sound/poly_fit/examples/dictionary/encoding_represen/train_speech_test_music_solo/orig_orig_picc.wav" type="audio/wav">
+		  Your browser does not support the audio element.
+		</audio>[Fs = 48000 samples/sec, Original Picc]
+                <br>
+		<audio controls>
+		  <source src="sound/poly_fit/examples/dictionary/encoding_represen/train_speech_test_music_solo/ldict_37x100_dspars_3_rspars_15_orig_picc.wav" type="audio/wav">
+		  Your browser does not support the audio element.
+		</audio>[Fs = 48000 samples/sec, K = 3, s = 15]
+                <br>
+                <br>
+		<audio controls>
+		  <source src="sound/poly_fit/examples/dictionary/encoding_represen/train_speech_test_music_solo/orig_orig_trpt.wav" type="audio/wav">
+		  Your browser does not support the audio element.
+		</audio>[Fs = 48000 samples/sec, Original Trumphet]
+                <br>
+		<audio controls>
+		  <source src="sound/poly_fit/examples/dictionary/encoding_represen/train_speech_test_music_solo/ldict_37x100_dspars_3_rspars_15_orig_trpt.wav" type="audio/wav">
+		  Your browser does not support the audio element.
+		</audio>[Fs = 48000 samples/sec, K = 3, s = 15]
+                <br>
+                Here, we have used s = 15 (note that s = 15 was sufficient for encoding same speaker speech very well, but we can make out the difference when it represents the music
+                instruments for the same s).
+                It is interesting to note that the solo instruments with rich spectrum above 5 kHz (trumphet) are reconstructed not that well as others (flute, mari)
+	        Below we show the spectrogram (N = 1024, Fs = 48k) for trumphet signal (original and reconstructed (above)).
+	        Clearly, the high frequency content is not represented well.
+   	        <img class="img-responsive" src="images/stct/dictionary/dictionary_speech_represen_trumphet.png" alt="">
+	        
+	  </div>
+      </div> 
+      </div>
+    </div>    
+  </section><!--/#dictionary-->
+
+  <section id="discriminability">
+    <div class="container">
+      <div class="heading wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
+      <div class="row">
+          <div class="text-left col-sm-8 col-sm-offset-2">
+            <h2>Discriminability using Dictionary</h2>
+            <p><b>Here, we intend to use the dictionary learnt using STCT representation as discriminable features across sound sources</b>.
+            Consider, D<sub>1</sub> and D<sub>2</sub> as dictionaries created from STCT represenations belonging to two different sound sources, respectively.
+            Example D<sub>1</sub> pertains to speaker 1 (spk-1), and D<sub>2</sub> pertains to speaker 2 (spk-2).
+            Now, given a test sound signal composed of a mix of speech of spk-1 and spk-2, we intend to reconstruct it using [D<sub>1</sub> D<sub>2</sub>].
+            That is let the STCT representation of the test signal be C. Then, we solve for:
+            $$ \arg\min_{A_1,A_2} \|[A_1\ A_2]^{\intercal}\| _{0}\ \mbox{s.t. } \| C -[D_1\ D_2] [A_1\ A_2]^{\intercal}\|_2\leq err$$
+            $$ \hat{C}_{1} = D_1 A_1,\ \hat{C}_{1} = D_2 A_2$$
+            $$ \hat{C}_{1}\rightarrow \hat{x}_1(t),\ \hat{C}_{2}\rightarrow \hat{x}_2(t)$$
+            As of now, the sepration is not good. This questions the discriminability using the representations.
+	  </div>
+      </div> 
+      </div>
+    </div>    
+  </section><!--/#discriminability-->
+
+
+  <section id="csampling">
+    <div class="container">
+      <div class="heading wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
+      <div class="row">
+          <div class="text-left col-sm-8 col-sm-offset-2">
+            <h2>Compressive Sampling and Recovery</h2>
+            <p><b>Here, we intend to use the Chebyshev basis as a domain for sparse representation</b>.
+            While this will hold for polynomials, we apply it to oscillatory signals (that is speech and audio).
+            The formulation for a signal segment (y) of duration 20 msec follows below.
+            $$ x_{n\times 1} = A_{\mathcal{T}}c_{n\times 1}$$
+            $$ y_{m\times 1} = \Phi_{m\times n} x$$
+            A<sub>T</sub> is the Chebyshve matrix sampled at instants contained in T.
+            These instants can be any n time instants. We choose them to be n points of Chebyshev grids.
+            The goal is to recover x from the sampled m (< n ) random projections in y. This is done for each 20 msec segment of the signal.
+            The recovery can be posed as an sparse recovery problem.
+	    $$ \arg\min_{c}\|y-\Phi A_{\mathcal{T}} c\|_{1}+\lambda \|c\|_{1}$$
+	    $$ \hat{x} = A_{\mathcal{T}}c$$
+	    The above is a <a href=http://statweb.stanford.edu/~tibs/lasso/simple.html>LASSO</a> formulation, and we use <a href= http://cvxr.com/cvx/>CVX</a> to solve it. LAMBDA is a regularize, we set it to 1.
+	    <h3>Speech</h3>
+	    Below shows the plots for average recovery performance obatined for 5 speech files (< 4secs each, Fs = 16000 samples per sec).
+	    The different objective measures used are specific to speech quality estimation and use original signal as reference.
+	    <img class="img-responsive" src="images/stct/csampling/compressive_sampling_speech_chebyshev.png" alt="">
+	    The increase in LLR for sub-sampling above 0.8 looks like a bug in LLR computation as other measures don't resonate with it.
+	    The correspnding reconstructed sounds can be heard below.
+	    <br>
+	    <audio controls>
+	    <source src="sound/poly_fit/examples/csampling/speech/cheb_M_100_mic_F01_sa2.wav" type="audio/wav">
+	    Your browser does not support the audio element.
+	    </audio>[with sub-sampling ratio 0.33]
+	    <br>
+	    <audio controls>
+	    <source src="sound/poly_fit/examples/csampling/speech/cheb_M_160_mic_F01_sa2.wav" type="audio/wav">
+	    Your browser does not support the audio element.
+	    </audio>[with sub-sampling ratio of 0.50]
+	    <br>
+	    <audio controls>
+	    <source src="sound/poly_fit/examples/csampling/speech/cheb_M_210_mic_F01_sa2.wav" type="audio/wav">
+	    Your browser does not support the audio element.
+	    </audio>[with sub-sampling ratio of 0.65]
+	    <br>
+	    <audio controls>
+	    <source src="sound/poly_fit/examples/csampling/speech/orig_mic_F01_sa2.wav" type="audio/wav">
+	    Your browser does not support the audio element.
+	    </audio>[original]
+	    <br>
+	    
+	    <h3>Solo Instruments</h3>
+	    Below plot shows the average recovery performance computed using 6 solo music instruments (castinet, flute, mari, trumphet,
+	    picc, and oboe).
+	    <img class="img-responsive" src="images/stct/csampling/compressive_sampling_solo_instm_chebyshev.png" alt="">
+	    The correspnding reconstructed sounds can be heard below.
+	    <h4>Castanet</h4>
+	    <audio controls>
+	    <source src="sound/poly_fit/examples/csampling/music/cheb_M_110_411CNNO3_castanet.wav" type="audio/wav">
+	    Your browser does not support the audio element.
+	    </audio>[with sub-sampling ratio 0.33]
+	    <br>
+	    <audio controls>
+	    <source src="sound/poly_fit/examples/csampling/music/cheb_M_170_411CNNO3_castanet.wav" type="audio/wav">
+	    Your browser does not support the audio element.
+	    </audio>[with sub-sampling ratio of 0.50]
+	    <br>
+	    <audio controls>
+	    <source src="sound/poly_fit/examples/csampling/music/cheb_M_210_411CNNO3_castanet.wav" type="audio/wav">
+	    Your browser does not support the audio element.
+	    </audio>[with sub-sampling ratio of 0.65]
+	    <br>
+	    <audio controls>
+	    <source src="sound/poly_fit/examples/csampling/music/orig_411CNNO3_castanet.wav" type="audio/wav">
+	    Your browser does not support the audio element.
+	    </audio>[original]
+	    
+	    <h4>Trumphet</h4>
+	    <audio controls>
+	    <source src="sound/poly_fit/examples/csampling/music/cheb_M_110_trpt.wav" type="audio/wav">
+	    Your browser does not support the audio element.
+	    </audio>[with sub-sampling ratio 0.33]
+	    <br>
+	    <audio controls>
+	    <source src="sound/poly_fit/examples/csampling/music/cheb_M_170_trpt.wav" type="audio/wav">
+	    Your browser does not support the audio element.
+	    </audio>[with sub-sampling ratio of 0.50]
+	    <br>
+	    <audio controls>
+	    <source src="sound/poly_fit/examples/csampling/music/cheb_M_210_trpt.wav" type="audio/wav">
+	    Your browser does not support the audio element.
+	    </audio>[with sub-sampling ratio of 0.65]
+	    <br>
+	    <audio controls>
+	    <source src="sound/poly_fit/examples/csampling/music/orig_trpt.wav" type="audio/wav">
+	    Your browser does not support the audio element.
+	    </audio>[original]
+	    
+	    </div>
+      </div> 
+      </div>
+    </div>    
+  </section><!--/#csampling-->
+  
+ <footer id="footer">
+    <div class="footer-top wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
+      <div class="container text-center">
+        <div class="footer-logo">
+          <a href="index.html"><img class="img-responsive" src="images/logo.png" alt=""></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6">
+            <p>&copy; 2014 Oxygen Theme.</p>
+          </div>
+          <div class="col-sm-6">
+            <p class="pull-right">Designed by <a href="http://www.themeum.com/">Themeum</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+<!--  <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>-->
+  <script type="text/javascript" src="js/jquery.inview.min.js"></script>
+  <script type="text/javascript" src="js/wow.min.js"></script>
+  <script type="text/javascript" src="js/mousescroll.js"></script>
+  <script type="text/javascript" src="js/smoothscroll.js"></script>
+  <script type="text/javascript" src="js/jquery.countTo.js"></script>
+  <script type="text/javascript" src="js/lightbox.min.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+
+</body>
+</html>

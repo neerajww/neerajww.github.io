@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>neeks | IISc</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/animate.min.css" rel="stylesheet"> 
+  <link href="css/font-awesome.min.css" rel="stylesheet">
+  <link href="css/lightbox.css" rel="stylesheet">
+  <link href="css/main.css" rel="stylesheet">
+  <link id="css-preset" href="css/presets/preset1.css" rel="stylesheet">
+  <link href="css/responsive.css" rel="stylesheet">
+
+<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+
+  <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+  <![endif]-->
+  
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
+  <link rel="shortcut icon" href="images/favicon.ico">
+</head><!--/head-->
+
+<body>
+
+  <!--.preloader-->
+<!--  <div class="preloader"> <i class="fa fa-circle-o-notch fa-spin"></i></div>-->
+  <!--/.preloader-->
+
+  <header id="home">
+    <div id="home-slider" class="carousel slide carousel-fade" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="item active" style="background-image: url(images/slider/10_tvnm.jpg)">
+          <div class="caption">
+              <h1 class="animated fadeInLeftBig"><span>Time-varying Sinusoidal Demodulation</span> of Speech</h1>
+              <p class="animated fadeInRightBig">Time-domain processing | <span>No windowing</span></p>
+            <a data-scroll class="btn btn-start animated fadeInUpBig" href="#approach">Details below</a>
+          </div>
+        </div>
+<!--        <div class="item" style="background-image: url(images/slider/2.jpg)">
+          <div class="caption">
+            <h1 class="animated fadeInLeftBig">Say Hello to <span>Oxygen</span></h1>
+            <p class="animated fadeInRightBig">Bootstrap - Responsive Design - Retina Ready - Parallax</p>
+            <a data-scroll class="btn btn-start animated fadeInUpBig" href="#approach">Start now</a>
+          </div>
+        </div>
+        <div class="item" style="background-image: url(images/slider/3.jpg)">
+          <div class="caption">
+            <h1 class="animated fadeInLeftBig">We are <span>Creative</span></h1>
+            <p class="animated fadeInRightBig">Bootstrap - Responsive Design - Retina Ready - Parallax</p>
+            <a data-scroll class="btn btn-start animated fadeInUpBig" href="#approach">Start now</a>
+          </div>
+        </div>-->
+      </div>
+      <a class="left-control" href="#home-slider" data-slide="prev"><i class="fa fa-angle-left"></i></a>
+      <a class="right-control" href="#home-slider" data-slide="next"><i class="fa fa-angle-right"></i></a>
+
+      <a id="tohash" href="#approach"><i class="fa fa-angle-down"></i></a>
+
+    </div><!--/#home-slider-->
+    <div class="main-nav">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">
+            <h1><img class="img-responsive" src="images/logo.png" alt="logo"></h1>
+          </a>                    
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">                 
+            <li class="scroll active"><a href="#home">Home</a></li>
+            <li class="scroll"><a href="#approach">Approach</a></li> 
+            <li class="scroll"><a href="#analysis">Swapping</a></li>
+            <li class="scroll"><a href="#quantization">Comparison</a></li>
+            <li class="scroll"><a href="#elements">Manipulation</a></li>
+            </ul>
+        </div>
+      </div>
+    </div><!--/#main-nav-->
+  </header><!--/#home-->
+  <section id="approach">
+    <div class="container">
+      <div class="heading wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
+        <div class="row">
+          <div class="text-left col-sm-8 col-sm-offset-2">
+            <h2>Proposed Approach</h2>
+            <p>Speech signals contain a fairly rich time-evolving spectral content. Accurate analysis of this time-evolving spectrum is an open challenge in signal processing.
+            Towards this, we visit time-varying sinusoidal modeling of speech and propose an alternate model estimation approach.
+            The estimation operates on the whole signal without any short-time analysis. 
+            <br>The approach proceeds by extracting the fundamental frequency sinusoid (FFS) from speech signal.
+            The instantaneous amplitude (IA) of the FFS is used for voiced/unvoiced stream segregation.
+            The voiced stream is then demodulated using a variant of in-phase and quadrature-phase demodulation carried at harmonics of the FFS.
+            The result is a non-parametric time-varying sinusoidal representation, specifically,
+            an additive mixture of quasi-harmonic sinusoids for voiced stream and a wideband mono-component sinusoid for unvoiced stream.
+            The representation is evaluated for analysis-synthesis, and the bandwidth of IA and IF signals are found to be crucial in preserving the quality. Also, the obtained IA and IF signals are found to be carriers of perceived speech attributes, such as speaker characteristics and intelligibility.
+            <br>On comparing the proposed modeling framework with the existing approaches, which operate on short-time segments, improvement is found in simplicity of implementation, computation time, and quality of synthesis.
+            In summary, the proposed representation lends itself for high resolution temporal analysis of non-stationary speech signals, and also allows quality preserving modification and synthesis.
+            </p>
+            <hr>
+              <br><b>The details of the method are submitted as a manuscript to the Journal of Speech Communication. Below we have provided some illustration of the method using some figures and speech signals.</b>
+            <br> 
+            <hr>
+            <br> 
+            <div class="folio-image">
+                  <img class="img-responsive" src="../../../media/image/tvnm_analysis.jpg" alt="Illustration of analysis.">
+            </div>
+
+            <br>      
+            <div class="folio-image">
+                  <img class="img-responsive" src="../../../media/image/tvnm_synthesis.jpg" alt="Illustration of synthesis.">
+            </div>
+
+            <br>      
+            <div class="folio-image">
+                  <img class="img-responsive" src="../../../media/image/tvnm_synthesis_spectgms.jpg" alt="Illustration of spectrograms of synthesized signals.">
+            </div>
+
+
+            Below you can listen to anlysis-synthesis of a sample audio signal reconstructed using the proposed approach.
+
+            <table style="width:600px">
+                <tr><td>Original signal</td>
+                    <td><audio controls>
+                      <source src="../../../media/audio/data/preprint/tvnm_samples/orig_sub_01_sent_01.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                        </audio></td></tr>
+                <tr><td>Reconstructed signal (after stage-1 IQ)</td>
+                    <td><audio controls>
+                      <source src="../../../media/audio/data/preprint/tvnm_samples/recons_qhdfbank_iq_stage_1_sub_01_sent_01.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                        </audio></td></tr>
+                <tr><td>Reconstructed signal (after stage-2 IQ)</td>
+                    <td><audio controls>
+                      <source src="../../../media/audio/data/preprint/tvnm_samples/recons_qhdfbank_iq_stage_2_sub_01_sent_01.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                        </audio></td></tr>
+                <tr><td>Reconstructed signal (after stage-10 IQ)</td>
+                    <td><audio controls>
+                      <source src="../../../media/audio/data/preprint/tvnm_samples/recons_qhdfbank_iq_stage_10_sub_01_sent_01.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                        </audio></td></tr>
+                <tr><td>Reconstructed voiced stream</td>
+                    <td><audio controls>
+                      <source src="../../../media/audio/data/preprint/tvnm_samples/V_recons_qhdfbank_iq_stage_2_sub_01_sent_01.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                        </audio></td></tr>
+                <tr><td>Reconstructed unvoiced stream</td>
+                    <td><audio controls>
+                      <source src="../../../media/audio/data/preprint/tvnm_samples/UV_recons_qhdfbank_sub_01_sent_01.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                        </audio></td></tr>
+            </table>
+            <br>  
+            <div class="folio-image">
+                  <img class="img-responsive" src="../../../media/image/tvnm_perfm_speech_synthesis_IQ_stages.jpg" alt="Illustration of performance over stages of IQ.">
+            </div>
+            </div> 
+          </div>
+        </div>  
+      </div>
+  </section><!--/#approach-->
+  <section id="analysis">
+    <div class="container">
+      <div class="heading wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
+      <div class="row">
+          <div class="text-left col-sm-8 col-sm-offset-2">
+            <h2>Swapping</h2>
+
+              <div class="folio-image">
+                  <img class="img-responsive" src="../../../media/image/tvnm_swapping.jpg" alt="Illustration of spectrograms obtained from swapping.">
+              </div>
+              
+            <br>
+            <table style="width:600px">
+                <tr><td>Input speech stream</td>
+                    <td><audio controls>
+                      <source src="../../../media/audio/data/preprint/tvnm_samples/orig_1_orig.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                        </audio></td></tr>
+                <tr><td>Input vocals stream</td>
+                    <td><audio controls>
+                      <source src="../../../media/audio/data/preprint/tvnm_samples/orig_2_orig.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                        </audio></td></tr>
+                <tr><td>Swapping using IA, IF estimates from proposed approach</td>
+                    <td><audio controls>
+                      <source src="../../../media/audio/data/preprint/tvnm_samples/swap_1_qhd.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                        </audio></td></tr>
+                <tr><td>Swapping using IA, IF estimates from uniform bandwidth filter bank</td>
+                    <td><audio controls>
+                      <source src="../../../media/audio/data/preprint/tvnm_samples/swap_1_unif.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                        </audio></td></tr>
+                <tr><td>Swapping using IA, IF estimates from uniform mel-bandwidth filter bank</td>
+                    <td><audio controls>
+                      <source src="../../../media/audio/data/preprint/tvnm_samples/swap_1_log.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                        </audio></td></tr>
+            </table>
+          </div>
+      </div> 
+      </div>
+    </div>    
+  </section><!--/#analysis-->
+
+  <section id="quantization">
+    <div class="container">
+      <div class="heading wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
+      <div class="row">
+          <div class="text-left col-sm-8 col-sm-offset-2">
+            <h2>Comparison</h2>
+            <br>  
+            <div class="folio-image">
+                  <img class="img-responsive" src="../../../media/image/tvnm_comparison.jpg" alt="Block diagram showing comparison methods used.">
+            </div>
+              <b>A. Male speech samples drawn from 8 different talkers</b>.  
+            <table style="width:600px">
+                <tr>
+                    <td>1. Original</td><td></td><td></td>
+                </tr>
+                <tr>
+                    <td><audio controls>
+                      <source src="../../../media/audio/data/preprint/tvnm_samples/ltest/orig_Male_Talker_01_orig.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                        </audio></td><td></td><td></td>
+                </tr>
+                <tr>
+                    <td>Proposed</td>
+                    <td>SM (Exsting approach)</td>
+                    <td>aHM-AIR (Exsting approach)</td>
+                </tr>
+                <tr>
+                    <td><audio controls>
+                      <source src="../../../media/audio/data/preprint/tvnm_samples/ltest/orig_Male_Talker_01_qhd.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                        </audio></td>
+                    <td><audio controls>
+                      <source src="../../../media/audio/data/preprint/tvnm_samples/ltest/orig_Male_Talker_01_sm.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                        </audio></td>
+                    <td><audio controls>
+                      <source src="../../../media/audio/data/preprint/tvnm_samples/ltest/orig_Male_Talker_01_ahm.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                        </audio></td>
+                </tr>
+                <tr>
+                    <td>2. Original</td><td></td><td></td>
+                </tr>
+                <tr>
+                    <td><audio controls>
+                      <source src="../../../media/audio/data/preprint/tvnm_samples/ltest/orig_Male_Talker_02_orig.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                        </audio></td><td></td><td></td>
+                </tr>
+                <tr>
+                    <td>Proposed</td>
+                    <td>SM (Exsting approach)</td>
+                    <td>aHM-AIR (Exsting approach)</td>
+                </tr>
+                <tr>
+                    <td><audio controls>
+                      <source src="../../../media/audio/data/preprint/tvnm_samples/ltest/orig_Male_Talker_02_qhd.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                        </audio></td>
+                    <td><audio controls>
+                      <source src="../../../media/audio/data/preprint/tvnm_samples/ltest/orig_Male_Talker_02_sm.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                        </audio></td>
+                    <td><audio controls>
+                      <source src="../../../media/audio/data/preprint/tvnm_samples/ltest/orig_Male_Talker_02_ahm.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                        </audio></td>
+                </tr>
+                <tr>
+                    <td>3. Original</td><td></td><td></td>
+                </tr>
+                <tr>
+                    <td><audio controls>
+                      <source src="../../../media/audio/data/preprint/tvnm_samples/ltest/orig_Male_Talker_03_orig.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                        </audio></td><td></td><td></td>
+                </tr>
+                <tr>
+                    <td>Proposed</td>
+                    <td>SM (Exsting approach)</td>
+                    <td>aHM-AIR (Exsting approach)</td>
+                </tr>
+                <tr>
+                    <td><audio controls>
+                      <source src="../../../media/audio/data/preprint/tvnm_samples/ltest/orig_Male_Talker_03_qhd.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                        </audio></td>
+                    <td><audio controls>
+                      <source src="../../../media/audio/data/preprint/tvnm_samples/ltest/orig_Male_Talker_03_sm.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                        </audio></td>
+                    <td><audio controls>
+                      <source src="../../../media/audio/data/preprint/tvnm_samples/ltest/orig_Male_Talker_03_ahm.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                        </audio></td>
+                </tr>
+                <tr>
+                    <td>4. Original</td><td></td><td></td>
+                </tr>
+                <tr>
+                    <td><audio controls>
+                      <source src="../../../media/audio/data/preprint/tvnm_samples/ltest/orig_Male_Talker_04_orig.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                        </audio></td><td></td><td></td>
+                </tr>
+                <tr>
+                    <td>Proposed</td>
+                    <td>SM (Exsting approach)</td>
+                    <td>aHM-AIR (Exsting approach)</td>
+                </tr>
+                <tr>
+                    <td><audio controls>
+                      <source src="../../../media/audio/data/preprint/tvnm_samples/ltest/orig_Male_Talker_04_qhd.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                        </audio></td>
+                    <td><audio controls>
+                      <source src="../../../media/audio/data/preprint/tvnm_samples/ltest/orig_Male_Talker_04_sm.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                        </audio></td>
+                    <td><audio controls>
+                      <source src="../../../media/audio/data/preprint/tvnm_samples/ltest/orig_Male_Talker_04_ahm.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                        </audio></td>
+                </tr>
+                <tr>
+                    <td>5. Original</td><td></td><td></td>
+                </tr>
+                <tr>
+                    <td><audio controls>
+                      <source src="../../../media/audio/data/preprint/tvnm_samples/ltest/orig_Male_Talker_05_orig.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                        </audio></td><td></td><td></td>
+                </tr>
+                <tr>
+                    <td>Proposed</td>
+                    <td>SM (Exsting approach)</td>
+                    <td>aHM-AIR (Exsting approach)</td>
+                </tr>
+                <tr>
+                    <td><audio controls>
+                      <source src="../../../media/audio/data/preprint/tvnm_samples/ltest/orig_Male_Talker_05_qhd.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                        </audio></td>
+                    <td><audio controls>
+                      <source src="../../../media/audio/data/preprint/tvnm_samples/ltest/orig_Male_Talker_05_sm.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                        </audio></td>
+                    <td><audio controls>
+                      <source src="../../../media/audio/data/preprint/tvnm_samples/ltest/orig_Male_Talker_05_ahm.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                        </audio></td>
+                </tr>
+                <tr>
+                    <td>6. Original</td><td></td><td></td>
+                </tr>
+                <tr>
+                    <td><audio controls>
+                      <source src="../../../media/audio/data/preprint/tvnm_samples/ltest/orig_Male_Talker_06_orig.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                        </audio></td><td></td><td></td>
+                </tr>
+                <tr>
+                    <td>Proposed</td>
+                    <td>SM (Exsting approach)</td>
+                    <td>aHM-AIR (Exsting approach)</td>
+                </tr>
+                <tr>
+                    <td><audio controls>
+                      <source src="../../../media/audio/data/preprint/tvnm_samples/ltest/orig_Male_Talker_06_qhd.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                        </audio></td>
+                    <td><audio controls>
+                      <source src="../../../media/audio/data/preprint/tvnm_samples/ltest/orig_Male_Talker_06_sm.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                        </audio></td>
+                    <td><audio controls>
+                      <source src="../../../media/audio/data/preprint/tvnm_samples/ltest/orig_Male_Talker_06_ahm.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                        </audio></td>
+                </tr>
+                <tr>
+                    <td>7. Original</td><td></td><td></td>
+                </tr>
+                <tr>
+                    <td><audio controls>
+                      <source src="../../../media/audio/data/preprint/tvnm_samples/ltest/orig_Male_Talker_07_orig.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                        </audio></td><td></td><td></td>
+                </tr>
+                <tr>
+                    <td>Proposed</td>
+                    <td>SM (Exsting approach)</td>
+                    <td>aHM-AIR (Exsting approach)</td>
+                </tr>
+                <tr>
+                    <td><audio controls>
+                      <source src="../../../media/audio/data/preprint/tvnm_samples/ltest/orig_Male_Talker_07_qhd.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                        </audio></td>
+                    <td><audio controls>
+                      <source src="../../../media/audio/data/preprint/tvnm_samples/ltest/orig_Male_Talker_07_sm.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                        </audio></td>
+                    <td><audio controls>
+                      <source src="../../../media/audio/data/preprint/tvnm_samples/ltest/orig_Male_Talker_07_ahm.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                        </audio></td>
+                </tr>
+                <tr>
+                    <td>8. Original</td><td></td><td></td>
+                </tr>
+                <tr>
+                    <td><audio controls>
+                      <source src="../../../media/audio/data/preprint/tvnm_samples/ltest/orig_Male_Talker_08_orig.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                        </audio></td><td></td><td></td>
+                </tr>
+                <tr>
+                    <td>Proposed</td>
+                    <td>SM (Exsting approach)</td>
+                    <td>aHM-AIR (Exsting approach)</td>
+                </tr>
+                <tr>
+                    <td><audio controls>
+                      <source src="../../../media/audio/data/preprint/tvnm_samples/ltest/orig_Male_Talker_08_qhd.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                        </audio></td>
+                    <td><audio controls>
+                      <source src="../../../media/audio/data/preprint/tvnm_samples/ltest/orig_Male_Talker_08_sm.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                        </audio></td>
+                    <td><audio controls>
+                      <source src="../../../media/audio/data/preprint/tvnm_samples/ltest/orig_Male_Talker_08_ahm.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                        </audio></td>
+                </tr>
+            </table>
+            <br>
+            <b>B. Female speech samples drawn from 8 different talkers</b>.  
+            <table style="width:600px">
+                <tr>
+                    <td>1. Original</td><td></td><td></td>
+                </tr>
+                <tr>
+                    <td><audio controls>
+                      <source src="../../../media/audio/data/preprint/tvnm_samples/ltest/orig_Female_Talker_01_orig.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                        </audio></td><td></td><td></td>
+                </tr>
+                <tr>
+                    <td>Proposed</td>
+                    <td>SM (Exsting approach)</td>
+                    <td>aHM-AIR (Exsting approach)</td>
+                </tr>
+                <tr>
+                    <td><audio controls>
+                      <source src="../../../media/audio/data/preprint/tvnm_samples/ltest/orig_Female_Talker_01_qhd.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                        </audio></td>
+                    <td><audio controls>
+                      <source src="../../../media/audio/data/preprint/tvnm_samples/ltest/orig_Female_Talker_01_sm.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                        </audio></td>
+                    <td><audio controls>
+                      <source src="../../../media/audio/data/preprint/tvnm_samples/ltest/orig_Female_Talker_01_ahm.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                        </audio></td>
+                </tr>
+                <tr>
+                    <td>2. Original</td><td></td><td></td>
+                </tr>
+                <tr>
+                    <td><audio controls>
+                      <source src="../../../media/audio/data/preprint/tvnm_samples/ltest/orig_Female_Talker_02_orig.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                        </audio></td><td></td><td></td>
+                </tr>
+                <tr>
+                    <td>Proposed</td>
+                    <td>SM (Exsting approach)</td>
+                    <td>aHM-AIR (Exsting approach)</td>
+                </tr>
+                <tr>
+                    <td><audio controls>
+                      <source src="../../../media/audio/data/preprint/tvnm_samples/ltest/orig_Female_Talker_02_qhd.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                        </audio></td>
+                    <td><audio controls>
+                      <source src="../../../media/audio/data/preprint/tvnm_samples/ltest/orig_Female_Talker_02_sm.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                        </audio></td>
+                    <td><audio controls>
+                      <source src="../../../media/audio/data/preprint/tvnm_samples/ltest/orig_Female_Talker_02_ahm.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                        </audio></td>
+                </tr>
+                <tr>
+                    <td>3. Original</td><td></td><td></td>
+                </tr>
+                <tr>
+                    <td><audio controls>
+                      <source src="../../../media/audio/data/preprint/tvnm_samples/ltest/orig_Female_Talker_03_orig.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                        </audio></td><td></td><td></td>
+                </tr>
+                <tr>
+                    <td>Proposed</td>
+                    <td>SM (Exsting approach)</td>
+                    <td>aHM-AIR (Exsting approach)</td>
+                </tr>
+                <tr>
+                    <td><audio controls>
+                      <source src="../../../media/audio/data/preprint/tvnm_samples/ltest/orig_Female_Talker_03_qhd.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                        </audio></td>
+                    <td><audio controls>
+                      <source src="../../../media/audio/data/preprint/tvnm_samples/ltest/orig_Female_Talker_03_sm.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                        </audio></td>
+                    <td><audio controls>
+                      <source src="../../../media/audio/data/preprint/tvnm_samples/ltest/orig_Female_Talker_03_ahm.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                        </audio></td>
+                </tr>
+                <tr>
+                    <td>4. Original</td><td></td><td></td>
+                </tr>
+                <tr>
+                    <td><audio controls>
+                      <source src="../../../media/audio/data/preprint/tvnm_samples/ltest/orig_Female_Talker_04_orig.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                        </audio></td><td></td><td></td>
+                </tr>
+                <tr>
+                    <td>Proposed</td>
+                    <td>SM (Exsting approach)</td>
+                    <td>aHM-AIR (Exsting approach)</td>
+                </tr>
+                <tr>
+                    <td><audio controls>
+                      <source src="../../../media/audio/data/preprint/tvnm_samples/ltest/orig_Female_Talker_04_qhd.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                        </audio></td>
+                    <td><audio controls>
+                      <source src="../../../media/audio/data/preprint/tvnm_samples/ltest/orig_Female_Talker_04_sm.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                        </audio></td>
+                    <td><audio controls>
+                      <source src="../../../media/audio/data/preprint/tvnm_samples/ltest/orig_Female_Talker_04_ahm.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                        </audio></td>
+                </tr>
+                <tr>
+                    <td>5. Original</td><td></td><td></td>
+                </tr>
+                <tr>
+                    <td><audio controls>
+                      <source src="../../../media/audio/data/preprint/tvnm_samples/ltest/orig_Female_Talker_05_orig.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                        </audio></td><td></td><td></td>
+                </tr>
+                <tr>
+                    <td>Proposed</td>
+                    <td>SM (Exsting approach)</td>
+                    <td>aHM-AIR (Exsting approach)</td>
+                </tr>
+                <tr>
+                    <td><audio controls>
+                      <source src="../../../media/audio/data/preprint/tvnm_samples/ltest/orig_Female_Talker_05_qhd.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                        </audio></td>
+                    <td><audio controls>
+                      <source src="../../../media/audio/data/preprint/tvnm_samples/ltest/orig_Female_Talker_05_sm.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                        </audio></td>
+                    <td><audio controls>
+                      <source src="../../../media/audio/data/preprint/tvnm_samples/ltest/orig_Female_Talker_05_ahm.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                        </audio></td>
+                </tr>
+                <tr>
+                    <td>6. Original</td><td></td><td></td>
+                </tr>
+                <tr>
+                    <td><audio controls>
+                      <source src="../../../media/audio/data/preprint/tvnm_samples/ltest/orig_Female_Talker_06_orig.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                        </audio></td><td></td><td></td>
+                </tr>
+                <tr>
+                    <td>Proposed</td>
+                    <td>SM (Exsting approach)</td>
+                    <td>aHM-AIR (Exsting approach)</td>
+                </tr>
+                <tr>
+                    <td><audio controls>
+                      <source src="../../../media/audio/data/preprint/tvnm_samples/ltest/orig_Female_Talker_06_qhd.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                        </audio></td>
+                    <td><audio controls>
+                      <source src="../../../media/audio/data/preprint/tvnm_samples/ltest/orig_Female_Talker_06_sm.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                        </audio></td>
+                    <td><audio controls>
+                      <source src="../../../media/audio/data/preprint/tvnm_samples/ltest/orig_Female_Talker_06_ahm.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                        </audio></td>
+                </tr>
+                <tr>
+                    <td>7. Original</td><td></td><td></td>
+                </tr>
+                <tr>
+                    <td><audio controls>
+                      <source src="../../../media/audio/data/preprint/tvnm_samples/ltest/orig_Female_Talker_07_orig.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                        </audio></td><td></td><td></td>
+                </tr>
+                <tr>
+                    <td>Proposed</td>
+                    <td>SM (Exsting approach)</td>
+                    <td>aHM-AIR (Exsting approach)</td>
+                </tr>
+                <tr>
+                    <td><audio controls>
+                      <source src="../../../media/audio/data/preprint/tvnm_samples/ltest/orig_Female_Talker_07_qhd.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                        </audio></td>
+                    <td><audio controls>
+                      <source src="../../../media/audio/data/preprint/tvnm_samples/ltest/orig_Female_Talker_07_sm.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                        </audio></td>
+                    <td><audio controls>
+                      <source src="../../../media/audio/data/preprint/tvnm_samples/ltest/orig_Female_Talker_07_ahm.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                        </audio></td>
+                </tr>
+                <tr>
+                    <td>8. Original</td><td></td><td></td>
+                </tr>
+                <tr>
+                    <td><audio controls>
+                      <source src="../../../media/audio/data/preprint/tvnm_samples/ltest/orig_Female_Talker_08_orig.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                        </audio></td><td></td><td></td>
+                </tr>
+                <tr>
+                    <td>Proposed</td>
+                    <td>SM (Exsting approach)</td>
+                    <td>aHM-AIR (Exsting approach)</td>
+                </tr>
+                <tr>
+                    <td><audio controls>
+                      <source src="../../../media/audio/data/preprint/tvnm_samples/ltest/orig_Female_Talker_08_qhd.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                        </audio></td>
+                    <td><audio controls>
+                      <source src="../../../media/audio/data/preprint/tvnm_samples/ltest/orig_Female_Talker_08_sm.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                        </audio></td>
+                    <td><audio controls>
+                      <source src="../../../media/audio/data/preprint/tvnm_samples/ltest/orig_Female_Talker_08_ahm.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                        </audio></td>
+                </tr>
+            </table>
+          </div>
+      </div> 
+      </div>
+    </div>    
+  </section><!--/#quantization-->
+  
+  <section id="elements">
+    <div class="container">
+      <div class="heading wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
+      <div class="row">
+          <div class="text-left col-sm-8 col-sm-offset-2">
+            <h2>Manipulation</h2>
+            <div class="folio-image">
+                  <img class="img-responsive" src="../../../media/image/tvnm_manipulate.jpg" alt="Block diagram showing manipulation method.">
+            </div>
+            <br> 
+            <table style="width:600px">
+                <tr>
+                    <td>Original</td><td>Pitch scaled down by 0.85</td><td>Pitch scaled up 1.15</td>
+                </tr>
+                <tr>
+                    <td><audio controls>
+                      <source src="../../../media/audio/data/preprint/tvnm_samples/manipulate/HFS_orig_sub_01_set_2_a_snippet_1_normal.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                        </audio></td>
+                    <td><audio controls>
+                      <source src="../../../media/audio/data/preprint/tvnm_samples/manipulate/PSM_HFS_psm_0.85_vBW_am_100Hz_vBW_fm_100Hz_uBW_am_2000Hz_uBW_fm_2000Hz_syn_nharm_30_sub_01_set_2_a_snippet_1_normal.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                        </audio></td>
+                    <td><audio controls>
+                      <source src="../../../media/audio/data/preprint/tvnm_samples/manipulate/PSM_HFS_psm_1.15_vBW_am_100Hz_vBW_fm_100Hz_uBW_am_2000Hz_uBW_fm_2000Hz_syn_nharm_30_sub_01_set_2_a_snippet_1_normal.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                        </audio></td>                    
+                </tr>
+                <tr>
+                    <td><audio controls>
+                      <source src="../../../media/audio/data/preprint/tvnm_samples/manipulate/HFS_orig_ichappel_snippet-01.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                        </audio></td>
+                    <td><audio controls>
+                      <source src="../../../media/audio/data/preprint/tvnm_samples/manipulate/PSM_HFS_psm_0.85_vBW_am_70Hz_vBW_fm_70Hz_uBW_am_2000Hz_uBW_fm_2000Hz_syn_nharm_30_ichappel_snippet-01.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                        </audio></td>
+                    <td><audio controls>
+                      <source src="../../../media/audio/data/preprint/tvnm_samples/manipulate/PSM_HFS_psm_1.15_vBW_am_70Hz_vBW_fm_70Hz_uBW_am_2000Hz_uBW_fm_2000Hz_syn_nharm_30_ichappel_snippet-01.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                        </audio></td>                    
+                </tr>
+            </table>              
+            <br> 
+            <table style="width:600px">
+                <tr>
+                    <td>Original</td><td>Add virbrato</td>
+                </tr>
+                <tr>
+                    <td><audio controls>
+                      <source src="../../../media/audio/data/preprint/tvnm_samples/manipulate/qhd_orig_vega_sent-04.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                        </audio></td>
+                    <td><audio controls>
+                      <source src="../../../media/audio/data/preprint/tvnm_samples/manipulate/qhd_vibr_8_syn_VU_stage_1_vBW_am_100Hz_vBW_fm_100Hz_syn_nharm_26_vega_sent-04.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                        </audio></td>
+                </tr>
+            </table>              
+	  </div>
+      </div> 
+      </div>
+    </div>    
+  </section><!--/#elements-->
+  
+  
+ <footer id="footer">
+    <div class="footer-top wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
+      <div class="container text-center">
+        <div class="footer-logo">
+          <a href="index.html"><img class="img-responsive" src="images/logo.png" alt=""></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6">
+            <p>&copy; 2014 Oxygen Theme.</p>
+          </div>
+          <div class="col-sm-6">
+            <p class="pull-right">Designed by <a href="http://www.themeum.com/">Themeum</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/jquery.inview.min.js"></script>
+  <script type="text/javascript" src="js/wow.min.js"></script>
+  <script type="text/javascript" src="js/mousescroll.js"></script>
+  <script type="text/javascript" src="js/smoothscroll.js"></script>
+  <script type="text/javascript" src="js/jquery.countTo.js"></script>
+  <script type="text/javascript" src="js/lightbox.min.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+
+</body>
+</html>
