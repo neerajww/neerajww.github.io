@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>neeks | CMU</title>
+  <link href="./modeling/css/bootstrap.min.css" rel="stylesheet">
+  <link href="./modeling/css/animate.min.css" rel="stylesheet"> 
+  <link href="./modeling/css/font-awesome.min.css" rel="stylesheet">
+  <link href="./modeling/css/lightbox.css" rel="stylesheet">
+  <link href="./modeling/css/main.css" rel="stylesheet">
+  <link id="css-preset" href="./modeling/css/presets/preset1.css" rel="stylesheet">
+  <link href="./modeling/css/responsive.css" rel="stylesheet">
+
+<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+
+  <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+  <![endif]-->
+  
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
+  <link rel="shortcut icon" href="./modeling/images/favicon.ico">
+</head><!--/head-->
+
+<body>
+
+  <!--.preloader-->
+<!--  <div class="preloader"> <i class="fa fa-circle-o-notch fa-spin"></i></div>-->
+  <!--/.preloader-->
+
+  <header id="home">
+    <div id="home-slider" class="carousel slide carousel-fade" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="item active" style="background-image: url(./modeling/images/slider/10_tvnm.jpg)">
+          <div class="caption">
+              <h1 class="animated fadeInLeftBig"><span>Doing FORCED-ALIGNMENT</span></h1>
+              <p class="animated fadeInRightBig">using existing tools</p>
+            <a data-scroll class="btn btn-start animated fadeInUpBig" href="#approach">Details below</a>
+          </div>
+        </div>
+      </div>
+      <a class="left-control" href="#home-slider" data-slide="prev"><i class="fa fa-angle-left"></i></a>
+      <a class="right-control" href="#home-slider" data-slide="next"><i class="fa fa-angle-right"></i></a>
+
+      <a id="tohash" href="#approach"><i class="fa fa-angle-down"></i></a>
+
+    </div><!--/#home-slider-->
+    <div class="main-nav">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">
+            <h1><img class="img-responsive" src="./modeling/images/logo.png" alt="logo"></h1>
+          </a>                    
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">                 
+            <li class="scroll active"><a href="#home">Home</a></li>
+            <li class="scroll"><a href="#approach">About</a></li> 
+            <li class="scroll"><a href="#analysis">Steps</a></li>
+            <li class="scroll"><a href="#quantization">Analysis</a></li>
+            <li class="scroll"><a href="#elements">Summary</a></li>
+            </ul>
+        </div>
+      </div>
+    </div><!--/#main-nav-->
+  </header><!--/#home-->
+  <section id="approach">
+    <div class="container">
+      <div class="heading wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
+        <div class="row">
+          <div class="text-left col-sm-8 col-sm-offset-2">
+            <h2>About</h2>
+            <p><a href="http://prosodylab.org/tools/aligner/">Prosody-Lab</a>aligner
+            </p>
+            <hr>
+              <br><b>Below figures illustrate the final output of forced alignment when applied on a speech signal.</b>
+            <br> 
+            <hr>
+            <br> 
+            <div class="folio-image">
+                  <img class="img-responsive" src="../../media/image/falign_overview.jpg" alt="Illustration of Forced Alignment.">
+            </div>
+            <br>      
+
+            <div class="folio-image">
+                  <img class="img-responsive" src="../../media/image/falign_overview_spectgm.jpg" alt="Block Diagram.">
+            </div>
+            <br>      
+              
+            <div class="folio-image">
+                  <img class="img-responsive" src="../../media/image/falign_examp_error.jpg" alt="Block Diagram.">
+            </div>
+            <br>      
+            </div> 
+          </div>
+        </div>  
+      </div>
+  </section><!--/#approach-->
+  <section id="analysis">
+    <div class="container">
+      <div class="heading wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
+      <div class="row">
+          <div class="text-left col-sm-8 col-sm-offset-2">
+            <h2>Steps</h2>
+              1. Put all .wav files in a directory. Make sure sampling rate is 16 kHz. In case they are not at 16 kHz, you can use SOX command line utility for resampling (in a batch-wise manner with shell scripting).
+              <br>
+              2. Put the word transcript for each .wav file in the same folder. These should have .lab extension. An example file is here.
+              <br>
+              3. Install the toolkit. It requires python3. Follow the installation steps here. Update the textgrid.py file from the GitHub repo. Otherwise, it may throw an error during execution for a specific case due to poor handling of floating point round-off if the installation used an old file.
+              <br>
+              4. Go to the directory containing setup.py and execute from terminal:
+              <br> python -m aligner -r "acoustic-model" -a "full path to data directory" -d "pronunciation-dictionary" 
+              <br>example,
+              <br> python -m aligner -r eng.zip -a /Users/xyz/data/ -d pronun_dict.txt 
+              <br>
+              <i>In case you get a message to look at OOV.txt it means some of the words in .lab file do not have a pronuciation stored in the pronunciation dictionary file. You can open the pronunciation-dictionary file in a text editor and append the missing words with pronuciation. The pronunciation can be obtained from the CMU dictionary. If not found there, you can you the tool at <a href="">click here</a> to create them and then append to the dictionary file. Note that, this tool does not add stress variability notations to the phonemes (example, instead of EY1 it will give EY). You have to manually add it.</i>
+              <br>
+              5. Output will be stored as "filename.TextGrid" files in the directory containing the .wav files.
+              <br>
+            <div class="folio-image">
+                  <img class="img-responsive" src="../../media/image/falign_block_diag.jpg" alt="Block Diagram.">
+            </div>
+            <br>      
+          </div>
+      </div> 
+      </div>
+    </div>    
+  </section><!--/#analysis-->
+
+  <section id="quantization">
+    <div class="container">
+      <div class="heading wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
+      <div class="row">
+          <div class="text-left col-sm-8 col-sm-offset-2">
+            <h2>Analysis</h2>
+            <br>  
+          </div>
+      </div> 
+      </div>
+    </div>    
+  </section><!--/#quantization-->
+  
+  <section id="elements">
+    <div class="container">
+      <div class="heading wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
+      <div class="row">
+            <div class="text-left col-sm-8 col-sm-offset-2">
+            <h2>Summary</h2>
+            <br> 
+	        </div>
+      </div> 
+      </div>
+    </div>    
+  </section><!--/#elements-->
+  
+  
+ <footer id="footer">
+    <div class="footer-top wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
+      <div class="container text-center">
+        <div class="footer-logo">
+          <a href="index.html"><img class="img-responsive" src="./modeling/images/logo.png" alt=""></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6">
+            <p>&copy; 2014 Oxygen Theme.</p>
+          </div>
+          <div class="col-sm-6">
+            <p class="pull-right">Designed by <a href="http://www.themeum.com/">Themeum</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="text/javascript" src="./modeling/js/jquery.js"></script>
+  <script type="text/javascript" src="./modeling/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="./modeling/js/jquery.inview.min.js"></script>
+  <script type="text/javascript" src="./modeling/js/wow.min.js"></script>
+  <script type="text/javascript" src="./modeling/js/mousescroll.js"></script>
+  <script type="text/javascript" src="./modeling/js/smoothscroll.js"></script>
+  <script type="text/javascript" src="./modeling/js/jquery.countTo.js"></script>
+  <script type="text/javascript" src="./modeling/js/lightbox.min.js"></script>
+  <script type="text/javascript" src="./modeling/js/main.js"></script>
+
+</body>
+</html>

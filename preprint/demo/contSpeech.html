@@ -1,0 +1,87 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<html lang="en">
+<script language="javascript" type="text/javascript">
+function showHide(shID) {
+   if (document.getElementById(shID)) {
+      if (document.getElementById(shID+'-show').style.display != 'none') {
+         document.getElementById(shID+'-show').style.display = 'none';
+         document.getElementById(shID).style.display = 'block';
+      }
+      else {
+         document.getElementById(shID+'-show').style.display = 'inline';
+         document.getElementById(shID).style.display = 'none';
+      }
+   }
+}
+</script>
+
+<style type="text/css">
+   /* This CSS is used for the Show/Hide functionality. */
+   .more {
+      display: none;
+      border-top: 1px solid #666;
+      border-bottom: 1px solid #666; }
+   a.showLink, a.hideLink {
+      text-decoration: none;
+      color: #36f;
+      padding-left: 8px;
+      background: transparent url(down.gif) no-repeat left; }
+   a.hideLink {
+      background: transparent url(up.gif) no-repeat left; }
+   a.showLink:hover, a.hideLink:hover {
+      border-bottom: 1px dotted #36f; }
+</style>
+
+
+<head>
+    <title>neeks| CMU-IISc </title>
+    <!-- <link rel="stylesheet" href="style_demo.css" type="text/css" media="screen" />-->
+    <link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+		 <script src='jquery.js' type="text/javascript"></script>
+</head>
+<body>
+<div id="footer-container">
+    <div id="footer">
+        <font face="Calibri"><b>Talker analysis from EEG signals of continuous speech listening</b>
+        </font>
+    </div>
+</div>
+
+<div id="content-container">
+	<div id="content-container2">
+		<div id="content-container3">
+			<div id="content">
+				<br> Below are some speech signals of talkers for the listening experiments.
+                <br>
+Test 1: Just listen attentively
+<a href="#" id="example1-show" class="showLink" onclick="showHide('example1');return false;">Click here.</a>
+<div id="example1" class="more">
+<p><a href="#" id="example1-hide" class="hideLink" onclick="showHide('example1');return false;">Hide this content.</a></p>
+
+<table>
+    <tr><td><b>T1</b> (mean F0 = 126 Hz) For text <a href="https://www.gutenberg.org/files/49292/49292-h/49292-h.htm#c2" target="_blank">click here</a></td></tr><tr><td><br><audio controls><source src="../../media/audio/data/preprint/contSpeech_samples/snippet-01.wav" type="audio/wav">Your browser does not support the MP3 audio element.</audio></td></tr>
+    <tr><td><b>T2</b> (mean F0 = 98 Hz): For text <a href="https://www.gutenberg.org/files/18284/18284-h/18284-h.htm#VI" target="_blank">click here</a></td></tr><tr><td><br><audio controls><source src="../../media/audio/data/preprint/contSpeech_samples/snippet-02.wav" type="audio/wav">Your browser does not support the MP3 audio element.</audio></td></tr>
+    <tr><td><b>T3</b> (mean F0 = 110 Hz): For text <a href="https://archive.org/details/discoveryexplora00she/page/6" target="_blank">click here</a></td></tr><tr><td><br><audio controls><source src="../../media/audio/data/preprint/contSpeech_samples/snippet-03.wav" type="audio/wav">Your browser does not support the MP3 audio element.</audio></td></tr>
+    <tr><td><b>T4</b> (mean F0 = 104 Hz): For text <a href="https://babel.hathitrust.org/cgi/pt?id=uc1.32106007740977;view=1up;seq=13" target="_blank">click here</a></td></tr><tr><td><br><audio controls><source src="../../media/audio/data/preprint/contSpeech_samples/snippet-04.wav" type="audio/wav">Your browser does not support the MP3 audio element.</audio></td></tr>
+</table> 
+<p><a href="#" id="example1-hide" class="hideLink" onclick="showHide('example1');return false;">Hide this content.</a></p>
+</div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+<div id="footer-container">
+		<div id="footer">
+            <br><br>
+                     <font face="Calibri"><i>&copy; For more details contact: <a title="Styleshout" href="http://neerajww.github.io">Neeraj Sharma</a></i>
+                     </font>
+                </div>
+</div>
+</body>
+</html>
+
+
+	 
