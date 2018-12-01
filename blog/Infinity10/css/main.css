@@ -2432,7 +2432,8 @@ html[data-useragent*='MSIE 10.0'] .scrolldown,
  *
  * ------------------------------------------------------------------- */
 #clients {
-  background-color: #e9eaea;
+  background-color: #FFFFFF; 
+/*    #e9eaea;*/
   padding: 4.8rem 0 4.8rem;
 }
 #clients .client-lists .owl-item {
@@ -2489,8 +2490,7 @@ html[data-useragent*='MSIE 10.0'] .scrolldown,
 #clients .owl-carousel .owl-dots .owl-dot span {
   width: 9px;
   height: 9px;
-/*  background-color: #959595;*/
-  background-color: #FFFFFF;
+  background-color: #959595;
   margin: 6px 6px;
   display: block;
   -webkit-backface-visibility: visible;
@@ -2499,8 +2499,7 @@ html[data-useragent*='MSIE 10.0'] .scrolldown,
 }
 #clients .owl-carousel .owl-dots .owl-dot.active span,
 #clients .owl-carousel .owl-dots .owl-dot:hover span {
-/*  background-color: #000000;*/
-  background-color: #FFFFFF;
+  background-color: #000000;
 }
 
 
