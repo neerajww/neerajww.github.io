@@ -2035,11 +2035,11 @@ html[data-useragent*='MSIE 10.0'] .scrolldown,
 }
 #portfolio .bricks-wrapper .brick {
   float: left;
-  width: 50%;
+  width: 25%;
   padding: 0;
   margin: 0;
 }
-#portfolio .bricks-wrapper .brick:nth-child(2n+1) {
+#portfolio .bricks-wrapper .brick:nth-child(2n+3) {
   clear: both;
 }
 
@@ -2489,7 +2489,8 @@ html[data-useragent*='MSIE 10.0'] .scrolldown,
 #clients .owl-carousel .owl-dots .owl-dot span {
   width: 9px;
   height: 9px;
-  background-color: #959595;
+/*  background-color: #959595;*/
+  background-color: #FFFFFF;
   margin: 6px 6px;
   display: block;
   -webkit-backface-visibility: visible;
@@ -2498,7 +2499,8 @@ html[data-useragent*='MSIE 10.0'] .scrolldown,
 }
 #clients .owl-carousel .owl-dots .owl-dot.active span,
 #clients .owl-carousel .owl-dots .owl-dot:hover span {
-  background-color: #000000;
+/*  background-color: #000000;*/
+  background-color: #FFFFFF;
 }
 
 
