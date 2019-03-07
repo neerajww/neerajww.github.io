@@ -1,0 +1,98 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<html lang="en">
+<script language="javascript" type="text/javascript">
+function showHide(shID) {
+   if (document.getElementById(shID)) {
+      if (document.getElementById(shID+'-show').style.display != 'none') {
+         document.getElementById(shID+'-show').style.display = 'none';
+         document.getElementById(shID).style.display = 'block';
+      }
+      else {
+         document.getElementById(shID+'-show').style.display = 'inline';
+         document.getElementById(shID).style.display = 'none';
+      }
+   }
+}
+</script>
+
+<style type="text/css">
+   /* This CSS is used for the Show/Hide functionality. */
+   .more {
+      display: none;
+      border-top: 1px solid #666;
+      border-bottom: 1px solid #666; }
+   a.showLink, a.hideLink {
+      text-decoration: none;
+      color: #36f;
+      padding-left: 8px;
+      background: transparent url(down.gif) no-repeat left; }
+   a.hideLink {
+      background: transparent url(up.gif) no-repeat left; }
+   a.showLink:hover, a.hideLink:hover {
+      border-bottom: 1px dotted #36f; }
+</style>
+
+
+<head>
+    <title>neeks| CMU-IISc </title>
+    <!-- <link rel="stylesheet" href="style_demo.css" type="text/css" media="screen" />-->
+    <link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+		 <script src='jquery.js' type="text/javascript"></script>
+</head>
+<body>
+<div id="footer-container">
+    <div id="footer">
+        <font face="Calibri"><b>Probing talker change pereption using MMN analysis</b>
+        </font>
+    </div>
+</div>
+
+<div id="content-container">
+	<div id="content-container2">
+		<div id="content-container3">
+			<div id="content">
+				<br> Below are a subset of samples for use as stimuli.
+                Press "Click here" to see the play button.<br>
+We have a dataset of 4 talkers x 360 words. Using these we have designed 4 stimuli, each composed of a sequence of 360 words, with 80% spoken by STANDARD talker and 20% spoken by the DEVIANT talkers (equally distributed amongst the 3 talkers). All words in the sequence are unique.
+<a href="#" id="example1-show" class="showLink" onclick="showHide('example1');return false;">Click here.</a>
+<div id="example1" class="more">
+<p><a href="#" id="example1-hide" class="hideLink" onclick="showHide('example1');return false;">Hide this content.</a></p>
+
+<table>
+    <tr><td><b>STANDARD talker: T1</b></td></tr>
+    <tr><td><br><audio controls><source src="../../../media/audio/data/preprint/mmn_samples/audra_examp.wav" type="audio/wav">Your browser does not support the MP3 audio element.</audio></td></tr>
+    
+    <tr><td><b>STANDARD talker: T2</b></td></tr>
+    <tr><td><br><audio controls><source src="../../../media/audio/data/preprint/mmn_samples/timM_examp.wav" type="audio/wav">Your browser does not support the MP3 audio element.</audio></td></tr>
+    
+    <tr><td><b>STANDARD talker: T3</b></td></tr>
+    <tr><td><br><audio controls><source src="../../../media/audio/data/preprint/mmn_samples/shae_examp.wav" type="audio/wav">Your browser does not support the MP3 audio element.</audio></td></tr>
+    
+    <tr><td><b>STANDARD talker: T4</b></td></tr>
+    <tr><td><br><audio controls><source src="../../../media/audio/data/preprint/mmn_samples/john_examp.wav" type="audio/wav">Your browser does not support the MP3 audio element.</audio></td></tr>
+    
+</table> 
+<p><a href="#" id="example1-hide" class="hideLink" onclick="showHide('example1');return false;">Hide this content.</a></p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+<div id="footer-container">
+		<div id="footer">
+            <br><br>
+                     <font face="Calibri"><i>&copy; We are starting. More to come here!</i>
+                     </font>
+                </div>
+</div>
+</body>
+</html>
+
+
+	 
