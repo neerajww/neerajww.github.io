@@ -94,8 +94,10 @@
           <div class="text-left col-sm-8 col-sm-offset-2">
             <h2>Proposed Approach</h2>
             <p>Speech signals contain a fairly rich time-evolving spectral content. Accurate analysis of this time-evolving spectrum is an open challenge in signal processing.
-            Towards this, we visit time-varying sinusoidal modeling of speech and propose an alternate model estimation approach.
-            The estimation operates on the whole signal without any short-time analysis. 
+            Towards this, we designed an approach which overcomes some of the challenges using foundational concepts in signal processing.
+            The webpage gives a quick pictorial presentation of the idea. Also, we have provided some example speech utterances for you as a listener to judge the quality of the processing.
+            <br>
+            <i>About the technique:</i> The estimation operates on the whole signal without any short-time analysis. 
             <br>The approach proceeds by extracting the fundamental frequency sinusoid (FFS) from speech signal.
             The instantaneous amplitude (IA) of the FFS is used for voiced/unvoiced stream segregation.
             The voiced stream is then demodulated using a variant of in-phase and quadrature-phase demodulation carried at harmonics of the FFS.
@@ -106,7 +108,7 @@
             In summary, the proposed representation lends itself for high resolution temporal analysis of non-stationary speech signals, and also allows quality preserving modification and synthesis.
             </p>
             <hr>
-              <br><b>The details of the method are submitted as a manuscript to the Journal of Speech Communication. Below we have provided some illustration of the method using some figures and speech signals.</b>
+              <br><b>The implementation details of the method are presented in the paper: Time-varying sinusoidal demodulation for non-stationary modeling of speech", in Speech Communication (vol. 105), 2018.  The code and some more information is provided in the GitHub repo at <a href="https://github.com/neerajww/tvhDemodulation">click here</a></b>
             <br> 
             <hr>
             <br> 
@@ -743,6 +745,27 @@
                         </audio></td>
                 </tr>
             </table>              
+            <br> 
+            <table style="width:600px">
+                <tr>
+                    <td>Original</td><td>Convert to robotic voice</td><td>Stylize the voice</td>
+                </tr>
+                <tr>
+                    <td><audio controls>
+                      <source src="../../../media/audio/data/preprint/tvnm_samples/manipulate/sub_01_sent_01_orig.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                        </audio></td>
+                    <td><audio controls>
+                      <source src="../../../media/audio/data/preprint/tvnm_samples/manipulate/sub_01_sent_01_robotic.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                        </audio></td>
+                    <td><audio controls>
+                      <source src="../../../media/audio/data/preprint/tvnm_samples/manipulate/sub_01_sent_01_style_manip_10.wav" type="audio/wav">
+                      Your browser does not support the audio element.
+                        </audio></td>
+                </tr>
+            </table>              
+              
 	  </div>
       </div> 
       </div>
@@ -766,6 +789,9 @@
           </div>
           <div class="col-sm-6">
             <p class="pull-right">Designed by <a href="http://www.themeum.com/">Themeum</a></p>
+          </div>
+          <div class="col-sm-6">
+            <p class="pull-right">Edited by Neeks</p>
           </div>
         </div>
       </div>
