@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 8)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+   <!--- Basic Page Needs
+   ================================================== -->
+   <meta charset="utf-8">
+	<title>Neeraj | IISc</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+   <!-- Mobile Specific Metas
+   ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- CSS
+    ================================================== -->
+   <link rel="stylesheet" href="css/default.css">
+	<link rel="stylesheet" href="css/layout.css">
+   <link rel="stylesheet" href="css/media-queries.css">
+   <link rel="stylesheet" href="css/magnific-popup.css">
+
+   <!-- Script
+   ================================================== -->
+	<script src="../../js/modernizr.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>    
+   <!-- Favicons
+	================================================== -->
+<!--	<link rel="shortcut icon" href="favicon.ico" >-->
+
+<!--google analytics script-->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-28027102-1']);
+  _gaq.push(['_setDomainName', 'ece.iisc.ernet.in']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<!-- to add click to know more-->
+<script language="javascript" type="text/javascript">
+function showHide(shID) {
+   if (document.getElementById(shID)) {
+      if (document.getElementById(shID+'-show').style.display != 'none') {
+         document.getElementById(shID+'-show').style.display = 'none';
+         document.getElementById(shID).style.display = 'block';
+      }
+      else {
+         document.getElementById(shID+'-show').style.display = 'inline';
+         document.getElementById(shID).style.display = 'none';
+      }
+   }
+}
+</script>
+
+<style type="text/css">
+   /* This CSS is used for the Show/Hide functionality. */
+   .more {
+      display: none;
+      border-top: 1px solid #666;
+      border-bottom: 1px solid #666; }
+   a.showLink, a.hideLink {
+      text-decoration: none;
+      color: #36f;
+      padding-left: 8px;
+      background: transparent url(down.gif) no-repeat left; }
+   a.hideLink {
+      background: transparent url(up.gif) no-repeat left; }
+   a.showLink:hover, a.hideLink:hover {
+      border-bottom: 1px dotted #36f; }
+</style>
+
+</head>
+
+<body>
+
+   <!-- Header
+   ================================================== -->
+   <header id="home">
+
+      <nav id="nav-wrap">
+
+         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show navigation</a>
+	      <a class="mobile-btn" href="#" title="Hide navigation">Hide navigation</a>
+
+         <ul id="nav" class="nav">
+            <li class="current"><a class="smoothscroll" href="#home">Home</a></li>
+            <li class="current"><a class="smoothscroll" href="#about_thesis">About-thesis</a></li>
+            <li class="current"><a class="smoothscroll" href="#chapter">Chapter-wise</a></li>
+            <li class="current"><a class="smoothscroll" href="#publication">Papers</a></li>
+            <li class="current"><a class="smoothscroll" href="#codes">Codes&ampDemos</a></li>
+            <li class="current"><a class="smoothscroll" href="#extras">Extras</a></li>
+         </ul> <!-- end #nav -->
+
+      </nav> <!-- end #nav-wrap -->
+
+      <div class="row banner">
+         <div class="banner-text">
+            <h2 class="responsive-headline"><br><br></h2>
+            <h2>Information-rich sampling of time-varying signals</h2>
+            <h4>Neeraj Kumar Sharma<br>
+                Dept. ECE, Indian Institute of Science<br>
+                Bengaluru, India</h4>
+            <br> To know more <a class="smoothscroll" href="#styles">scroll</a> the sidebar
+            <hr />
+            <ul class="social">
+               <li><a href="https://twitter.com/neeksww"><i class="fa fa-twitter"></i></a></li>
+            </ul>
+         </div>
+      </div>
+
+      <p class="scrolldown">
+         <a class="smoothscroll" href="#styles"><i class="icon-down-circle"></i></a>
+      </p>
+
+   </header> <!-- Header End -->
+
+   <!-- Style Guide Section
+   ================================================== -->
+   <section id="styles" style="padding: 10px 0 12px; background: #fff;">
+    <br>
+      <div class="row add-bottom">
+
+         <div class="twelve columns" id="about_thesis">
+
+            <h1>About the thesis</h1>
+
+            <p align ="justify" class="lead add-bottom"><a href="https://drive.google.com/file/d/17Olne0RBkVHRd2HcmJc0f44e17m47NZB/view">
+            <figure>
+            <img width="400" height="200" class="pull-left" alt="sample-image" src="./images/thesis_cover.png">
+            <figcaption>
+            Defended on 17 Jan 2018, IISc. (Download: 11 MB)
+            </figcaption>
+            </figure>
+            </a>
+            <i>Why this thesis?</i>
+            <br>
+            A huge class of non-stationary signals, which includes speech, music, birdsong, machine vibrations, and geophysical signals, feature a temporally evolving spectrum. Encountering non-stationarity is a rule rather than an exception while analyzing natural signals. Unlike stationary signal analysis, non-stationary signal analysis is a fairly challenging problem in the expanse of signal processing. Conventional approaches to analyze non-stationary signals use short-time quasi-stationary assumptions. Example, short-time signal segments are analyzed using one of several transforms, such as Fourier, chirplets, and wavelets, with a pre-defined basis. However, the quasi-stationary assumption is a serious limitation in recognizing fine temporal and spectral variations in signals. An accurate analysis of embedded variations can provide for more insightful understanding of natural signals. The thesis presents some approaches in this direction.
+            <br>
+            <i>What is the motivation?</i>
+            <br>
+            We believe that the human auditory system is often engaged in interpreting information from the ambient sounds, such as speech and audio, featuring immense signal non-stationarity. How is the auditory system so good at analysis and information extraction from these signals? Findings in the neuroscience literature suggest an information encoding scheme based on spiking activity (termed as neural firings) in the nerve fibers. It is observed that the spiking activity is synchronized to attributes, such as intensity, onset, and frequency content, etc., of the sound stimulus. Interestingly, over finer temporal resolution, the spiking is found to be synchronized with the instants of zero-crossings (ZCs) (and extrema, as well) of tone stimulus. Drawn by these findings, we conceptualize an event-synchronized sampling (ESS) and analysis of non-stationary signals. With event chosen as ZCs (and extrema) the sampling density (defined over short-time intervals) is time-varying. The time-varyingness adapts to the temporally evolving spectral content of the signal. In contrast to this, the sampling density is fixed (defined by an external clock) in traditional uniform Nyquist-rate samplers used in signal processing. We hypothesize that the captured dataset via ESS is a compact and informative dataset for analysis of non-stationary signals.
+            </p>
+            <hr>
+         </div>
+
+      </div>
+
+      <div class="row add-bottom" id="chapter">
+         <div class="twelve columns">
+            <h3>Chapter-wise</h3>
+            <p class="drop-cap"> +
+            <a><img width="300" height="100" class="pull-right" alt="sample-image" src="./images/img_ack.png"></a>
+            I will like to dedicate the thesis to all whom I have met in my journey till here. I have been fortunate to learn and have the company of wonderful people who have kept me inspired.
+            </p>
+            <p class="drop-cap">2 
+            <a><img width="300" height="100" class="pull-right" alt="sample-image" src="./images/img_chap_2.png"></a>
+            This chapter presents a review on auditory processing and the how it motivates an alternate non-stationary signal processing approach contrasting with traditional stationary methods.
+            It serves as a tutorial illustrating some of the lucunae of traditional time-frequency analysis approaches.  
+            </p>
+            <p class="drop-cap"> 3
+            Speech signals have a time-varying spectral content. This implies presence of time-varying redundancy in the signal, and opens up a possibility for adapting the sampling rate in continuous-time to discrete-time conversion. In this chapter, event-synchronized sampling using higher- order zero-crossings (HoZCs) is explored to facilitate such adaptation.
+            <a><img width="300" height="100" class="pull-right" alt="sample-image" src="./images/img_chap_3.png"></a>
+            HoZCs refer to ZCs associated with higher-order derivatives of the signal. Signal reconstruction from the captured samples is pursued within a convex optimization framework.
+            </p>
+            <p class="drop-cap"> 4
+            <a href=><img width="300" height="100" class="pull-right" alt="sample-image" src="./images/img_chap_4.png"></a>
+            A variety of non-stationary signals can be modeled as time-varying sinusoids, that is,
+            $$x(t)=a(t)\sin2\pi\int_{0}^{t}f(\tau)d\tau.$$
+            Of interest in this signal model is estimating the instantaneous amplitude (IA,\(a(t)\)) and the instantaneous frequency (IF, \(f(t)\)). In this chapter, we evaluate the effectiveness of samples drawn from ESS in estimating the IA and IF. The proposed approach shows similar accuracy as widely used analytic signal, energy separation (which are based on uniform Nyquist-rate sampling and processing) and ZC based approaches, and some improvement in case of measurement noise. For the same dataset size, performance for extrema versus uniform sampling dataset, the former gives much better IA and IF estimation. An analysis for robustness of extrema instants to Gaussian additive in-band noise and jitter in sampling time instants is also pursued.
+            </p>
+            <p class="drop-cap"> 5
+            <a><img width="300" height="100" class="pull-right" alt="sample-image" src="./images/img_chap_5.png"></a>
+            Here, we generalize the application of ESS from mono-component time-varying sinusoids to multi-component signals. We propose higher-order ZCs (HoZCs), or ZCs of signal derivatives, as informative samples for precise IA and IF estimation of each sinusoid in multi-component signals. It is shown that, over a wide range of modulation parameters, namely, bandwidth and modulation indices, the IA and IF signals associated with each sinusoid are preserved over successive signal derivatives. Further, successive differentiation induces a highest IF sinusoid amplitude dominance into the signal.
+            </p>
+            <p class="drop-cap"> 6
+            Speech signals contain a fairly rich time-evolving spectral content. Accurate analysis of this time-evolving spectrum is an open challenge in signal processing. Towards this, we designed an approach which overcomes some of <a><img width="300" height="100" class="pull-right" alt="sample-image" src="./images/img_chap_6.png"></a>
+            the challenges using foundational concepts in signal processing.
+  		    </p>
+            <p class="drop-cap"> 7
+            Here, I present some future directions which build on the topics explored in this thesis.
+            </p>
+         </div>
+         </div>
+        </section> 
+	 <!-- Row End-->
+   <section id="publication" style="padding: 10px 0 12px; background: #fff;">
+    <hr>      
+       <div class="row add-bottom">
+           <div class="twelve columns">
+               <h3>Papers ...</h3>
+		<dl class="lining" align="justify">
+			      <dt><b>Sparse signal reconstruction based on signal dependent non-uniform samples</b>
+			      <a href="http://ieeexplore.ieee.org/document/6288659/"> (In ICASSP'12, Kyoto)</a>
+                      <br><a href="#" id="find1-show" class="showLink" onclick="showHide('find1');return false;">Click to expand.</a></dt>
+				  <div id="find1" class="more">
+				  <p><a href="#" id="find1-hide" class="hideLink" onclick="showHide('find1');return false;">Hide this content.</a></p>
+				      <dd>The classical approach to A/D conversion has been uniform sampling and we get perfect reconstruction for
+				      bandlimited signals by satisfying the Nyquist Sampling Theorem. We propose a non-uniform sampling scheme based on level crossing
+				      (LC) time information. We show stable reconstruction of bandpass signals with correct scale factor and hence a unique reconstruction
+				      from only the non-uniform time information. For reconstruction from the level crossings we make use of the sparse reconstruction
+				      based optimization by constraining the bandpass signal to be sparse in its frequency content. While overdetermined system of equations
+				      is resorted to in the literature we use an undetermined approach along with sparse reconstruction formulation. We could get a
+				      reconstruction SNR >20dB and perfect support recovery with probability close to 1, in noise-less case and with lower probability
+				      in the noisy case. Random picking of LC from different levels over the same limited signal duration and for the same length of
+				      information, is seen to be advantageous for reconstruction.</dd>
+				      <p><a href="#" id="find1-hide" class="hideLink" onclick="showHide('find1');return false;">Hide this content.</a></p>
+				      </div>
+                  <br>
+			      <dt><b>Event-triggered sampling and reconstruction of sparse trigonometric polynomials</b>
+			                  <a href="http://ieeexplore.ieee.org/document/6983916/"> (In SPCOM'14, Bangalore)</a></dt>
+			      <br><a href="#" id="find2-show" class="showLink" onclick="showHide('find2');return false;">Click to expand.</a>
+				  <div id="find2" class="more">
+				  <p><a href="#" id="find2-hide" class="hideLink" onclick="showHide('find2');return false;">Hide this content.</a></p>
+				      <dd>We propose data acquisition from continuous-time signals belonging to the class of real-valued trigonometric polynomials using
+				      an event-triggered sampling paradigm. The sampling schemes proposed are: level crossing (LC), close to extrema LC, and extrema sampling.
+				      Analysis of robustness of these schemes to jitter, and bandpass additive gaussian noise is presented. In general these sampling schemes
+				      will result in non-uniformly spaced sample instants. We address the issue of signal reconstruction from the acquired data-set by imposing
+				      structure of sparsity on the signal model to circumvent the problem of gap and density constraints. The recovery performance is contrasted
+				      amongst the various schemes and with random sampling scheme. In the proposed approach, both sampling and reconstruction are non-linear
+				      operations, and in contrast to random sampling methodologies proposed in compressive sensing these techniques may be implemented
+				      in practice with low-power circuitry.</dd>
+				      <p><a href="#" id="find2-hide" class="hideLink" onclick="showHide('find2');return false;">Hide this content.</a></p>
+				      </div>
+                  <br>
+			      <dt><b>Moving Sound Source Parameter Estimation Using A Single Microphone And Signal Extrema Samples</b>
+			                  <a href="http://ieeexplore.ieee.org/document/7178387/"> (In ICASSP'15, Brisbane)</a></dt>
+			      <br><a href="#" id="find3-show" class="showLink" onclick="showHide('find3');return false;">Click to expand.</a>
+				  <div id="find3" class="more">
+				  <p><a href="#" id="find3-hide" class="hideLink" onclick="showHide('find3');return false;">Hide this content.</a></p>
+				      <dd>Estimating the parameters of moving sound sources using only the source signal is of interest in low-power, and contact-less source monitoring
+			      applications, such as, industrial robotics and bio-acoustics. The received signal embeds the motion attributes of the source via Doppler effect.
+			      In this paper, we analyze the Doppler effect on mixture of time-varying sinusoids. Focusing, on the instantaneous frequency (IF) of the received
+			      signal, we show that the IF profile composed of IF and its first two derivatives can be used to obtain source motion parameters. This requires
+			      a smooth estimate of IF profile. However, the numerical implementation of traditional approaches, such as analytic signal and energy separation
+			      approach, gives oscillatory behavior hence a non-smooth IF estimate. We devise an algorithm using non-uniformly spaced signal extrema samples
+			      of the received signal for smooth IF profile estimation. Using the smooth IF profiles for a source moving on a linear trajectory with constant
+			      velocity, an accurate estimate of moving source parameters is obtained. We see promise of this approach for an arbitrary trajectory motion
+			      parameter estimation.</dd>
+				      <p><a href="#" id="find3-hide" class="hideLink" onclick="showHide('find3');return false;">Hide this content.</a></p>
+				      </div>
+                  <br>
+			      <dt><b>Time-instant Sampling Based Encoding of Time-varying Acoustic Spectrum</b>
+                      <a href="http://scitation.aip.org/content/aip/proceeding/aipcp/10.1063/1.4939431"> (In MoH'14, Athens)</a></dt>
+			      <br><a href="#" id="find4-show" class="showLink" onclick="showHide('find4');return false;">Click to expand.</a>
+				  <div id="find4" class="more">
+				  <p><a href="#" id="find4-hide" class="hideLink" onclick="showHide('find4');return false;">Hide this content.</a></p>
+				      <dd>The inner ear has been shown to characterize an acoustic stimuli by transducing fluid motion in the inner ear to mechanical bending
+			      of stereocilia on the inner hair cells (IHCs). The excitation motion/energy transferred to an IHC is dependent on the frequency spectrum
+			      of the acoustic stimuli, and the spatial location of the IHC along the length of the basilar membrane (BM). Subsequently, the afferent
+			      auditory nerve fiber (ANF) bundle samples the encoded waveform in the IHCs by synapsing with them. In this work we focus on sampling of
+			      information by afferent ANFs from the IHCs, and show computationally that sampling at specific time instants is sufficient for decoding
+			      of time-varying acoustic spectrum embedded in the acoustic stimuli. The approach is based on sampling the signal at its zero-crossings
+			      and higher-order derivative zero-crossings. We show results of the approach on time-varying acoustic spectrum estimation from cricket
+			      call signal recording. The framework gives a time-domain and non-spatial processing perspective to auditory signal processing. The approach
+			      works on the full band signal, and is devoid of modeling any bandpass filtering mimicking the BM action. Instead, we motivate the approach
+			      from the perspective of event-triggered sampling by afferent ANFs on the stimuli encoded in the IHCs. Though the approach gives acoustic
+			      spectrum estimation but it is shallow on its complete understanding for plausible bio-mechanical replication with current mammalian auditory
+			      mechanics insights.</dd>
+				      <p><a href="#" id="find4-hide" class="hideLink" onclick="showHide('find4');return false;">Hide this content.</a></p>
+				      </div>
+                  <br>
+			      <dt><b>Event-triggered Sampling Using Signal Extrema for Instantaneous Amplitude and Instantaneous Frequency Estimation</b>
+                      <a href="http://www.sciencedirect.com/science/article/pii/S0165168415001383"> (In Signal Processing'15, Elsevier (Journal))</a></dt>
+			      <br><a href="#" id="find5-show" class="showLink" onclick="showHide('find5');return false;">Click to expand.</a>
+				  <div id="find5" class="more">
+				  <p><a href="#" id="find5-hide" class="hideLink" onclick="showHide('find5');return false;">Hide this content.</a></p>
+				      <dd>Event-triggered sampling (ETS) is a new approach towards efficient signal analysis. The goal of ETS need
+				 not be only signal reconstruction, but also direct estimation of desired information in the signal by skillful
+				 design of event. We show a promise of ETS approach towards better analysis of oscillatory non-stationary
+				  signals modeled by a time-varying sinusoid, when compared to existing uniform Nyquist-rate sampling
+				  based signal processing. We examine samples drawn using ETS, with events as zero-crossing (ZC), level-
+				  crossing (LC), and extrema, for additive in-band noise and jitter in detection instant. We find that extrema
+				  samples are robust, and also facilitate instantaneous amplitude (IA), and instantaneous frequency (IF)
+				  estimation in a time-varying sinusoid. The estimation is proposed solely using extrema samples, and a local
+				  polynomial regression based least-squares fitting approach. The proposed approach shows improvement, for
+				  noisy signals, over widely used analytic signal, energy separation, and ZC based approaches (which are based
+				  on uniform Nyquist-rate sampling based data-acquisition and processing). Further, extrema based ETS in
+				  general gives a sub-sampled representation (relative to Nyquist-rate) of a time-varying sinusoid. For the
+				  same data-set size captured with extrema based ETS, and uniform sampling, the former gives much better
+				  IA and IF estimation.</dd>
+				      <p><a href="#" id="find5-hide" class="hideLink" onclick="showHide('find5');return false;">Hide this content.</a></p>
+				      </div>
+                  <br>
+			      <dt><b>Mel-scale sub-band modelling for perceptually improved time-scale modification of speech and audio signals</b>
+                      <a href="https://ieeexplore.ieee.org/document/8077073/"> (In NCC, 2017, Chennai)</a></dt>
+			      <br><a href="#" id="find6-show" class="showLink" onclick="showHide('find6');return false;">Click to expand.</a>
+				  <div id="find6" class="more">
+				  <p><a href="#" id="find6-hide" class="hideLink" onclick="showHide('find6');return false;">Hide this content.</a></p>
+				      <dd>Good quality time-scale modification (TSM) of speech, and audio is a long standing challenge. The crux of the challenge is to maintain the perceptual subtilities of temporal variations in pitch and timbre even after time-scaling the signal. Widely used approaches, such as phase vocoder, and waveform overlap-add (OLA), are based on quasi-stationary assumption and the time-scaled signals have perceivable artifacts. In contrast to these approaches, we propose application of time-varying sinusoidal modeling for TSM, without any quasi-stationary assumption. The proposed model comprises of a mel-scale nonuniform bandwidth filter bank, and the instantaneous amplitude (IA), and instantaneous phase (IP) factorization of sub-band time-varying sinusoids. TSM of the signal is done by time-scaling IA, and IP in each sub-band. The lowpass nature of IA, and IP allows for time-scaling via interpolation. Formal listening tests on speech, and music (solo, and polyphonic) show reduction in TSM artifacts such as phasiness, and transient smearing. Further, the proposed approach gives improved quality in comparison to waveform synchronous OLA (WSOLA), phase vocoder with identity phase locking, and the recently proposed harmonic-percussive separation (HPS) based TSM methods. The obtained improvement in TSM quality highlights that speech analysis can benefit from appropriate choice of time-varying signal models.</dd>
+				      <p><a href="#" id="find6-hide" class="hideLink" onclick="showHide('find6');return false;">Hide this content.</a></p>
+				      </div>
+                  <br>
+			      <dt><b>Time-varying Sinusoidal Demodulation for Non-stationary Modeling of Speech</b>
+                      <a href="https://www.sciencedirect.com/science/article/pii/S0167639318300773"> (In Speech Communication'18, Elsevier (Journal))</a></dt>
+			      <br><a href="#" id="find9-show" class="showLink" onclick="showHide('find9');return false;">Click to expand.</a>
+				  <div id="find9" class="more">
+				  <p><a href="#" id="find9-hide" class="hideLink" onclick="showHide('find9');return false;">Hide this content.</a></p>
+				      <dd>Speech signals contain a fairly rich time-evolving spectral content. Accurate analysis of this time-evolving spectrum is an open challenge in signal processing.
+                        Towards this, we visit time-varying sinusoidal modeling of speech and propose an alternate model estimation approach. The estimation operates on the whole signal without any short-time analysis. The approach proceeds by extracting the fundamental frequency sinusoid (FFS) from speech signal. The instantaneous amplitude (IA) of the FFS is used for voiced/unvoiced stream segregation. The voiced stream is then demodulated using a variant of in-phase and quadrature-phase demodulation carried at harmonics of the FFS. The result is a non-parametric time-varying sinusoidal representation, specifically, an additive mixture of quasi-harmonic sinusoids for voiced stream and a wideband mono-component sinusoid for unvoiced stream. The representation is evaluated for analysis-synthesis, and the bandwidth of IA and IF signals are found to be crucial in preserving the quality. Also, the obtained IA and IF signals are found to be carriers of perceived speech attributes, such as speaker characteristics and intelligibility. On comparing the proposed modeling framework with the existing approaches, which operate on short-time segments, improvement is found in simplicity of implementation, objective-scores, and computation time. The listening test scores suggest that the quality preserves naturalness but does not yet beat the state-of-the-art short-time analysis methods. In summary, the proposed representation lends itself for high resolution temporal analysis of non-stationary speech signals, and also allows quality preserving modification and synthesis.
+                      </dd>
+				      <p><a href="#" id="find9-hide" class="hideLink" onclick="showHide('find9');return false;">Hide this content.</a></p>
+				      </div>
+     	        </dl>
+            <hr>
+         </div>
+
+      </div>
+    </section>
+     <!-- Row End-->
+   <section id="codes" style="padding: 10px 0 12px; background: #fff;">
+      <div class="row add-bottom">
+         <div class="eight columns add-bottom">
+            <h3 class="add-bottom">Codes &amp Demos</h3>
+            1. Demo from Chap 6 on speech analysis-modification-synthesis: <a href="https://neerajww.github.io/preprint/demo/modeling/tvnm.html">click here.</a>
+            <br>
+            2. Code for speech analysis-modification-synthesis: <a href="https://github.com/neerajww/tvhDemodulation">click here</a>
+            <br>
+            3. Demo from Chap 5 on using polynomials to model speech signals: <a href="https://neerajww.github.io/preprint/demo/modeling/stct.html">click here.</a>
+         </div>
+         <hr />
+      </div> <!-- Row End-->
+    </section>
+   <section id="extras" style="padding: 10px 0 12px; background: #fff;">
+      <div class="row add-bottom">
+         <div class="eight columns add-bottom">
+            <h3 class="add-bottom">Extras</h3>
+            1. PhD Defense Slides: <a href="https://drive.google.com/open?id=1SpwN0Ekz40rPZXSbecG5FuN__gHhnvuM">click here</a> (PDF 22 MB).
+            <br>
+            2. My current homepage: <a href="https://neerajww.github.io/">click here</a>.
+            <br>
+            3. I pursued my research with the guidance of Prof. T. V. Sreenivas, at the Speech and Audio Group (SAG), IISc. Prof. TVS officially retired in Nov. 2018. The SAG group website link is here: <a href="https://sites.google.com/site/sagiisc/">click here</a>.
+         </div>
+         <hr />
+          
+       <section id="extras" style="padding: 10px 0 12px; background: #fff;">
+      <div class="row add-bottom">
+         <div class="eight columns add-bottom">
+            <h3 class="add-bottom">Support and Funding</h3>
+            I will like to thank the Ministy of Human Resource and Development (MHRD) for providing me with PhD Scholarship, Indian Institute of Science for providing me learning atmosphere, Ecole Normale Superiure for having me as a visiting student, and SPIE, IEEE and Mechanics of Hearing Society for providing me travel support to conferences and opportunity to meet researchers across the world.
+            <a><img width="400" height="300" class="pull-right" alt="sample-image" src="./images/img_support_and_funding.img"></a>
+         </div>
+         <hr />
+  </div> <!-- Row End-->
+    </section>
+    
+ <!-- Resume Section End-->
+    </div>
+</section>
+
+
+   <!-- footer
+   ================================================== -->
+   <footer>
+
+      <div class="row">
+
+         <div class="twelve columns">
+
+            <ul class="social-links">
+<!--               <li><a href="#"><i class="fa fa-facebook"></i></a></li>-->
+               <li><a href="https://twitter.com/neeksww"><i class="fa fa-twitter"></i></a></li>
+            </ul>
+
+            <ul class="copyright">
+               <li>&copy; Copyright 2019 Neeks</li>
+               <li>Design by <a title="Styleshout" href="http://www.styleshout.com/">Styleshout</a></li>   
+            </ul>
+
+         </div>
+
+         <div id="go-top" style="display: block;"><a class="smoothscroll" title="Back to Top" href="#home"><i class="icon-up-open"></i></a></div>
+
+      </div>
+
+   </footer> <!-- Footer End-->
+
+   <!-- Java Script
+   ================================================== -->
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+   <script>window.jQuery || document.write('<script src="js/jquery-1.10.2.min.js"><\/script>')</script>
+   <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
+
+   <script src="js/jquery.flexslider.js"></script>
+   <script src="js/waypoints.js"></script>
+   <script src="js/jquery.fittext.js"></script>
+   <script src="js/magnific-popup.js"></script>
+   <script src="js/doubletaptogo.js"></script>
+   <script src="js/spin.js"></script>
+
+   <script src="js/init.js"></script>
+</body>
+
+</html>
