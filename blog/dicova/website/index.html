@@ -158,84 +158,80 @@ function showHide(shID) {
     <div class="row add-bottom" id="chapter">
          <div class="twelve columns">
             <h1>Results</h1>
-            <p class="drop-cap">1
-            The leaderboard saw participation from 29 teams.
-            </p>
-            <br>
-             <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://neerajww.github.io/blog/dicova/plotly/fig_world_map.html" width="800" height="400"></iframe>
-            <br>
+            The Challenge received registrations from 85 teams, spread across the globe and coming from industry, academia and independent teams. All these teams were sent the challenge datasets. Of these teams, 29 participated in evaluating their systems against the blind test set (233 audio files). For this, a leaderboard was set up in Codalab and every team posted a COVID probability score for each test audio file. In response they received the AUC score (area under the ROC curve) computed over the 233 test audio files. An high AUC (0-100%) implies better performance. Below we illustrate a few of our observations on the activity seen on the leaderboard.
              
-            <p class="drop-cap">2.0
-            Each team was given a maximum of 25 attempts to evaluate their system performance against the ground truth labels. The AUCs of many of these systems performed better than baseline.
-            </p>
-            <br>
-            <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://neerajww.github.io/blog/dicova/plotly/fig_histogram_aucs.html" width="700" height="500"></iframe>
-            <br>
+            <p class="drop-cap">The leaderboard saw participation from 29 teams.
+            </p>
+            <br>
+            <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://neerajww.github.io/blog/dicova/plotly/fig_world_map.html" width="800" height="400"></iframe>
+            <br>
+             
+            <p class="drop-cap">Each team was given a maximum of 25 attempts to evaluate their system performance against the hidden blind test labels. The AUCs of many of these systems performed better than the baseline system.
+            </p>
+            <br>
+            <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://neerajww.github.io/blog/dicova/plotly/fig_histogram_aucs.html" width="700" height="500"></iframe>
+            <br>
 
-            <p class="drop-cap">2.1
-            As found from the system report, there was a good diversity in kinds of features tried by different teams.
-            </p>
-            <br>
-            <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://neerajww.github.io/blog/dicova/plotly/fig_feature_types.html" width="400" height="400"></iframe>
-            <br>
+            <p class="drop-cap">There was a good diversity in kinds of features used by the teams. These features ranged from simple hand-crafted acoustic features (like, ZCR, energy) to advanced acoustic representations (embeddings) obtained using pre-trained DNNs.
+            </p>
+            <br>
+            <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://neerajww.github.io/blog/dicova/plotly/fig_feature_types.html" width="400" height="400"></iframe>
+            <br>
 
-            <p class="drop-cap">2.2
-            Also, the teams experimented with diverse kinds of classifiers.
-            </p>
-            <br>
-            <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://neerajww.github.io/blog/dicova/plotly/fig_classifier_types.html" width="400" height="400"></iframe>
-            <br>
+            <p class="drop-cap">The novelty of the task made teams also experiment with diverse kinds of classifiers.
+            </p>
+            <br>
+            <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://neerajww.github.io/blog/dicova/plotly/fig_classifier_types.html" width="400" height="400"></iframe>
+            <br>
 
-            <p class="drop-cap">2.2
-            The challenge task required handling data imbalance across the two classes. For this, several teams experimented with data augmentation (adding noise, reverberation, pitch shifting, etc., or cough files from other public datasets, like COUGHVID), and system fusion.
-            </p>
-            <br>
-            <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://neerajww.github.io/blog/dicova/plotly/fig_model_types.html" width="300" height="400"></iframe>
-            <br>
+            <p class="drop-cap">The challenge task required handling class data imbalance. For this, several teams experimented with data augmentation (adding noise, reverberation, pitch shifting, etc., or cough files from other public datasets, like COUGHVID), and system fusion.
+            </p>
+            <br>
+            <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://neerajww.github.io/blog/dicova/plotly/fig_model_types.html" width="300" height="400"></iframe>
+            <br>
 
-            <p class="drop-cap">3
-            The best performance was posted by team T-1 with an AUC of 87.04%, significantly improving over the baseline system performance.
-            </p>
-            <br>
-            <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://neerajww.github.io/blog/dicova/plotly/fig_barplot_test_best_aucs.html" width="700" height="400"></iframe>
-            <br>
+            <p class="drop-cap">The best performance was posted by team T-1 with an AUC of 87.04%, significantly improving over the baseline system performance (69.85%). This performance was followed by two close competitors, team T-2 posting 85.43% AUC and team T-3 posting 85.35% AUC. It was wonderful to see nine teams scores above 80% AUC!
+            </p>
+            <br>
+            <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://neerajww.github.io/blog/dicova/plotly/fig_barplot_test_best_aucs.html" width="700" height="400"></iframe>
+            <br>
 
-            <p class="drop-cap">4
-            The evaluation was open for 22 days. In the initial days only few teams evaluated there systems. As days passed, the leaderboard activity began to gain pace, and teams started improving their AUCs.
-            </p>
-            <br>
-            <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://neerajww.github.io/blog/dicova/plotly/fig_test_auc_teams_days.html" width="800" height="400"></iframe>
-            <br>
-             
-            <p class="drop-cap">5
-            Does more evaluation by a team implies a better AUC? See below!
-            </p>
-            <br>
-            <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://neerajww.github.io/blog/dicova/plotly/fig_scatter_auc_entries.html" width="500" height="500"></iframe>
-            <br>
+            <p class="drop-cap">The evaluation was open for 22 days. In the initial days only a few teams evaluated their systems. As days passed, the leaderboard activity began to gain pace, and teams started improving their AUCs.
+            </p>
+            <br>
+            <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://neerajww.github.io/blog/dicova/plotly/fig_test_auc_teams_days.html" width="800" height="400"></iframe>
+            <br>
+             
+            <p class="drop-cap">On which evaluation day did each team post their best AUC performance? Few did quite early, and many towards the end! 
+            </p>
+            <br>
+            <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://neerajww.github.io/blog/dicova/plotly/fig_barplot_test_best_day.html" width="700" height="400"></iframe>
+            <br>
 
-            <p class="drop-cap">6
-            How did the test-AUC compare against the val-AUC?
-            </p>
-            <br>
-            <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://neerajww.github.io/blog/dicova/plotly/fig_scatter_test_val.html" width="600" height="500"></iframe>
-            <br>
+            <p class="drop-cap">Does more evaluation by a team imply a better AUC? There is some correlation :)!
+            </p>
+            <br>
+            <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://neerajww.github.io/blog/dicova/plotly/fig_scatter_auc_entries.html" width="500" height="500"></iframe>
+            <br>
 
-            <p class="drop-cap">7
-            How does the sensitivity compare against the specificity?
-            </p>
-            <br>
-            <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://neerajww.github.io/blog/dicova/plotly/fig_scatter_spec_sens.html" width="600" height="500"></iframe>
-            <br>
-            <p class="drop-cap">8
-            And finally, here are the ROCs of the best 29 systems submitted to the leaderboard.
-            </p>
-            <br>
-            <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://neerajww.github.io/blog/dicova/plotly/fig_rocs.html" width="600" height="500"></iframe>
-            <br>
-             
+            <p class="drop-cap">How does the performance on the test set compare against the performance on the val set?
+            </p>
+            <br>
+            <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://neerajww.github.io/blog/dicova/plotly/fig_scatter_test_val.html" width="600" height="500"></iframe>
+            <br>
+
+            <p class="drop-cap">An important metric in evaluating a diagnosis tool is its specificity at some sensitivity. For the challenge we evaluated the specificity at 80% sensitivity. Below we show how different systems fared in this. The best specificity obtained was 83.33% by team T-1.
+            </p> 
+            <br>
+            <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://neerajww.github.io/blog/dicova/plotly/fig_scatter_spec_sens.html" width="600" height="500"></iframe>
+            <br>
+            <p class="drop-cap">And finally, here are the ROCs of the 29 systems corresponding to the best system of each team.
+            </p>
+            <br>
+            <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://neerajww.github.io/blog/dicova/plotly/fig_rocs.html" width="600" height="500"></iframe>
+            <br>
         </div>
-         </div>
+    </div>
 </section> 
     
 <section id="timeline" style="padding: 10px 0 12px; background: #fff;">
