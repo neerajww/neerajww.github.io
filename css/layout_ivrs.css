@@ -31,7 +31,7 @@ body { background: #0f0f0f; }
 header {
    position: relative;
    height: 800px;
-   min-height: 500px;
+   min-height: 300px;
    width: 100%;
 /*   background: #161415 url(../images/header-background.jpg) no-repeat top center;*/
 /*   background: #161415 url(../images/IMG_7877.JPG) no-repeat top center;*/
@@ -71,7 +71,7 @@ header .banner-text h1 {
 }
 header .banner-text h3 {
    font: 18px/1.9em 'librebaskerville-regular', serif;
-   color: #FF0000;
+   color: #0e957f;
    margin: 0 auto;
    width: 70%;
 /*  background-color:white;*/
