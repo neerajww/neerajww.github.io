@@ -43,11 +43,13 @@ function createSpotLightItem(array, itemNumber) {
     profileElement.appendChild(divElement1);
 }
 //[image_link,link_address,link_title,description]
-let arrayItem1 = ["images/highlights/konda_teaching_july2021.jpg", "https://krmopuri.github.io/", " Konda Reddy Mopuri ", " July-Nov Semester (2022) begins and our faculty are all set to go to the board for the teaching test"];
+let arrayItem0 = ["images/highlights/konda_teaching_july2021.jpg", "https://krmopuri.github.io/", " Konda Reddy Mopuri ", " July-Nov Semester (2022) begins and our faculty are all set to go to the board for the teaching test"];
 
-let arrayItem2 = ["images/highlights/Prof_Mahesh_Sep9_2022.jpeg", "https://uwaterloo.ca/civil-environmental-engineering/profile/mdpandey", "Mahesh Pandey", " (Univ. Waterloo, Canada) interacted with School members, sharing insights on use of ML for nuclear plant risk-assesment [9-Sept-2022]"];
+let arrayItem1 = ["images/highlights/Prof_Mahesh_Sep9_2022.jpeg", "https://uwaterloo.ca/civil-environmental-engineering/profile/mdpandey", "Mahesh Pandey", " (Univ. Waterloo, Canada) interacted with School members, sharing insights on use of ML for nuclear plant risk-assesment (Sep 2022)"];
 
-let arrayItem3 = ["images/highlights/varahan_lectures.png", "https://www.ou.edu/coe/cs/people/varahan", "S. Lakshmivarahan (Varahan)", ", globally recognized Applied Mathematician, to deliver lectures in the School in 2nd Week of Jan 2022"];
+let arrayItem2 = ["images/highlights/varahan_lectures.png", "https://www.ou.edu/coe/cs/people/varahan", "S. Lakshmivarahan (Varahan)", ", globally recognized Applied Mathematician, delivered lectures in the School (Jan 2023)"];
+
+let arrayItem3 = ["images/gallery/pushpak_talk_thankyou.jpg ", "https://www.cse.iitb.ac.in/~pb/", "Pushpak Bhattacharyya", ", shares his insights learnt over decades of NLP research, focussing on the Indian context (Apr 2023)"];
 
 let array = [arrayItem1, arrayItem2, arrayItem3];
 
