@@ -43,13 +43,15 @@ function createSpotLightItem(array, itemNumber) {
     profileElement.appendChild(divElement1);
 }
 //[image_link,link_address,link_title,description]
-let arrayItem0 = ["images/highlights/konda_teaching_july2021.jpg", "https://krmopuri.github.io/", " Konda Reddy Mopuri ", " July-Nov Semester (2022) begins and our faculty are all set to go to the board for the teaching test"];
+let arrayItem_11 = ["images/highlights/konda_teaching_july2021.jpg", "https://krmopuri.github.io/", " Konda Reddy Mopuri ", " July-Nov Semester (2022) begins and our faculty are all set to go to the board for the teaching test"];
 
-let arrayItem1 = ["images/highlights/Prof_Mahesh_Sep9_2022.jpeg", "https://uwaterloo.ca/civil-environmental-engineering/profile/mdpandey", "Mahesh Pandey", " (Univ. Waterloo, Canada) interacted with School members, sharing insights on use of ML for nuclear plant risk-assesment (Sep 2022)"];
+let arrayItem1_12 = ["images/highlights/Prof_Mahesh_Sep9_2022.jpeg", "https://uwaterloo.ca/civil-environmental-engineering/profile/mdpandey", "Mahesh Pandey", " (Univ. Waterloo, Canada) interacted with School members, sharing insights on use of ML for nuclear plant risk-assesment (Sep 2022)"];
 
-let arrayItem2 = ["images/highlights/varahan_lectures.png", "https://www.ou.edu/coe/cs/people/varahan", "S. Lakshmivarahan (Varahan)", ", globally recognized Applied Mathematician, delivered lectures in the School (Jan 2023)"];
+let arrayItem1 = ["images/highlights/varahan_lectures.png", "https://www.ou.edu/coe/cs/people/varahan", "S. Lakshmivarahan (Varahan)", ", globally recognized Applied Mathematician, delivered lectures in the School (Jan 2023)"];
 
-let arrayItem3 = ["images/gallery/pushpak_talk_thankyou.jpg ", "https://www.cse.iitb.ac.in/~pb/", "Pushpak Bhattacharyya", ", shares his insights learnt over decades of NLP research, focussing on the Indian context (Apr 2023)"];
+let arrayItem2 = ["images/spotlights/neeraj_tedxGuwahati2023.png", "https://www.youtube.com/watch?v=CYMMLLeGrVs", "TEDx Talk", " by Neeraj Kumar Sharma sharing the excitement of working with sound (Feb 2023)"];
+
+let arrayItem3 = ["images/spotlights/debanga_state_award_may2023.jpg", "https://debanga.github.io/", "Debanga Raj Neog", ",  receives the Young Scientist Award 2023 by the Assam Science Technology and Environment Council (May 2023)"];
 
 let array = [arrayItem1, arrayItem2, arrayItem3];
 
