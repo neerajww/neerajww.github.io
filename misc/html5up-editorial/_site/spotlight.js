@@ -47,11 +47,13 @@ let arrayItem_11 = ["images/highlights/konda_teaching_july2021.jpg", "https://kr
 
 let arrayItem1_12 = ["images/highlights/Prof_Mahesh_Sep9_2022.jpeg", "https://uwaterloo.ca/civil-environmental-engineering/profile/mdpandey", "Mahesh Pandey", " (Univ. Waterloo, Canada) interacted with School members, sharing insights on use of ML for nuclear plant risk-assesment (Sep 2022)"];
 
-let arrayItem1 = ["images/highlights/varahan_lectures.png", "https://www.ou.edu/coe/cs/people/varahan", "S. Lakshmivarahan (Varahan)", ", globally recognized Applied Mathematician, delivered lectures in the School (Jan 2023)"];
+let arrayItem1_13 = ["images/highlights/varahan_lectures.png", "https://www.ou.edu/coe/cs/people/varahan", "S. Lakshmivarahan (Varahan)", ", globally recognized Applied Mathematician, delivered lectures in the School (Jan 2023)"];
 
-let arrayItem2 = ["images/spotlights/neeraj_tedxGuwahati2023.png", "https://www.youtube.com/watch?v=CYMMLLeGrVs", "TEDx Talk", " by Neeraj Kumar Sharma sharing the excitement of working with sound (Feb 2023)"];
+let arrayItem1 = ["images/spotlights/neeraj_tedxGuwahati2023.png", "https://www.youtube.com/watch?v=CYMMLLeGrVs", "TEDx Talk", " by Neeraj Kumar Sharma sharing the excitement of working with sound (Feb 2023)"];
 
-let arrayItem3 = ["images/spotlights/debanga_state_award_may2023.jpg", "https://debanga.github.io/", "Debanga Raj Neog", ",  receives the Young Scientist Award 2023 by the Assam Science Technology and Environment Council (May 2023)"];
+let arrayItem2 = ["images/spotlights/debanga_state_award_may2023.jpg", "https://debanga.github.io/", "Debanga Raj Neog", ",  receives the Young Scientist Award 2023 by the Assam Science Technology and Environment Council (May 2023)"];
+
+let arrayItem3 = ["images/spotlights/online_learning.png","dsai_bsc_program.html", "Online BSc(Hons) Degree", " programme in DS&AI launched in the Coursera Education platform (Jul 2023)"];
 
 let array = [arrayItem1, arrayItem2, arrayItem3];
 
