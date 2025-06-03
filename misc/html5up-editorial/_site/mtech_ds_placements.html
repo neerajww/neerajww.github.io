@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Elements - Forty by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+
+	<body class="is-preload">
+		<div id="nav-placeholder"></div>		
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main" class="alt">
+						<!-- One -->
+                        <section id="one">
+                            <div class="inner">
+                                <header class="major">
+                                    <h1>Placements</h1>
+                                </header>
+                                <p>
+                                Graduates of the M.Tech in Data Science program at IIT Guwahati are sought after by leading companies and research organizations. The program equips students with advanced technical and analytical skills, interdisciplinary thinking, and hands-on project experience — making them well-prepared for roles in data science, AI, machine learning, research, and analytics across diverse industries.
+                                <br><br>
+                                We invite recruiters and organizations to harness the potential of our talented students and witness their transformative impact on the industry. To gather more information about the placement procedure at IIT Guwahati, please reach out to us through the following.
+                                <ul class="actions">
+                                    <li><a href="https://www.iitg.ac.in/ccd/" class="button">Centre for Career Development, IIT Guwahati</a></li>
+                                </ul>
+                              </p>
+                            </div>
+                        </section>
+                    </div>
+
+
+				<!-- Footer -->
+				<footer id="footer">
+					<div class="inner">
+						<!-- <ul class="icons">
+							<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+							<li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+						</ul> -->
+						<ul class="copyright">
+							<li>&copy; IIT Guwahati</li><li>Design: Adapted from <a href="https://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</div>
+				</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+			<script>
+			document.addEventListener("DOMContentLoaded", function () {
+				fetch("mtech_ds_navbar.html")
+				.then(response => {
+					if (!response.ok) throw new Error("Failed to load nav.html");
+					return response.text();
+				})
+				.then(data => {
+					document.getElementById("nav-placeholder").innerHTML = data;
+
+					// Rebind Forty template menu toggle
+					const menu = document.getElementById('menu');
+					const menuToggle = document.querySelector('a[href="#menu"]');
+
+					if (menu && menuToggle) {
+					menuToggle.addEventListener('click', function (e) {
+						e.preventDefault();
+						menu.classList.toggle('visible');
+					});
+
+					menu.addEventListener('click', function (e) {
+						if (e.target.tagName === 'A') {
+						menu.classList.remove('visible');
+						}
+					});
+					}
+				})
+				.catch(error => {
+					console.error("Error loading nav.html:", error);
+				});
+			});
+			</script>
+
+	</body>
+</html>

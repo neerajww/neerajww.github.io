@@ -1,0 +1,131 @@
+<!DOCTYPE HTML>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Elements - Forty by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+
+	<body class="is-preload">
+		<div id="nav-placeholder"></div>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main" class="alt">
+
+						<!-- One -->
+							<section id="one">
+								<div class="inner">
+									<header class="major">
+										<h1>Interdisciplinary Thesis Project</h1>
+									</header>
+                                <p>
+                                    The Interdisciplinary Thesis Project is a cornerstone of the M.Tech in Data Science program at IIT Guwahati. Spanning the second year of the program, this intensive research component enables students to apply advanced data science methodologies to complex, real-world problems across multiple domains.
+
+                                    Jointly offered by the Mehta Family School of Data Science and Artificial Intelligence, the Department of Mathematics, and the Department of Electronics and Electrical Engineering, the thesis project encourages cross-disciplinary collaboration and innovation. Students work closely with faculty members from diverse academic backgrounds, involving co-supervision across departments.
+                                </p>
+                                <h2 id="content">Key Highlights</h2>
+                                    <ul class="alt">
+                                        <li><a href="#" class="button primary small">Duration</a> 1 full academic year</li>
+                                        <li><a href="#" class="button primary small">Collaboration</a> Students are encouraged to collaborate with research labs, industry partners, or interdisciplinary faculty teams.</li>
+                                        <li><a href="#" class="button primary small">Scope</a> Projects span domains such as healthcare analytics, computer vision, natural language processing, finance, IoT, robotics, and smart energy systems, among others.</li>
+                                        <li><a href="#" class="button primary small">Outcome</a> Many thesis outcomes lead to publications in top-tier conferences or journals, open-source contributions, and solutions with real-world impact.</li>
+                                    </ul>
+                                <h2 id="content">Objectives</h2>
+                                <hr>
+                                    <div class="row">
+                                        <div class="col-4 col-12-medium">
+                                            <h3>Problem-Solving with Data</h3>
+                                            <p>Equip students with the skills to formulate and solve complex, real-world problems using advanced data science techniques. The focus is on developing practical, scalable solutions grounded in data-driven decision-making.</p>
+                                        </div>
+                                        <div class="col-4 col-12-medium">
+                                            <h3>Interdisciplinary Integration</h3>
+                                            <p>Encourage students to synthesize concepts from computer science, mathematics, statistics, and domain-specific knowledge. This cross-disciplinary approach is key to addressing multifaceted challenges in modern data science applications.</p>
+                                        </div>
+                                        <div class="col-4 col-12-medium">
+                                            <h3>Research and Critical Thinking</h3>
+                                            <p>Cultivate a strong foundation in research methodology and analytical reasoning. Students are trained to approach problems with curiosity and rigor, enabling them to contribute to cutting-edge innovations in data science.</p>
+                                        </div>
+                                    </div>
+
+                                <h2 id="content">Guidance and Evaluation</h2>
+                                <hr>
+                                <p>Each student is assigned a thesis supervisor or co-supervisors, depending on the project’s scope. Evaluation is carried out through regular progress reviews, a mid-term seminar, and a final thesis defense before a faculty panel. This project prepares students for careers in R&D, academia, or data-driven leadership roles in industry, offering a rigorous foundation for innovation at the intersection of data science and real-world challenges.
+                                    </p>
+                                <hr>
+
+                                </div>
+                            </section>
+                    </div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<!-- <ul class="icons">
+								<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+								<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+								<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+								<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+								<li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+							</ul> -->
+							<ul class="copyright">
+								<li>&copy; IIT Guwahati</li><li>Design: Adapted from <a href="https://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+			<script>
+			document.addEventListener("DOMContentLoaded", function () {
+				fetch("mtech_ds_navbar.html")
+				.then(response => {
+					if (!response.ok) throw new Error("Failed to load nav.html");
+					return response.text();
+				})
+				.then(data => {
+					document.getElementById("nav-placeholder").innerHTML = data;
+
+					// Rebind Forty template menu toggle
+					const menu = document.getElementById('menu');
+					const menuToggle = document.querySelector('a[href="#menu"]');
+
+					if (menu && menuToggle) {
+					menuToggle.addEventListener('click', function (e) {
+						e.preventDefault();
+						menu.classList.toggle('visible');
+					});
+
+					menu.addEventListener('click', function (e) {
+						if (e.target.tagName === 'A') {
+						menu.classList.remove('visible');
+						}
+					});
+					}
+				})
+				.catch(error => {
+					console.error("Error loading nav.html:", error);
+				});
+			});
+			</script>
+
+	</body>
+</html>
