@@ -3951,3 +3951,22 @@ input, select, textarea {
 			opacity: 1;
 			visibility: visible;
 		}
+
+/* Typing*/
+
+		.typing-label,
+		.typing {
+			font-weight: 600;
+			font-size: 24px;
+		}
+
+		.typing-highlight {
+			color: #d3c22b;
+		}
+
+		@media screen and (max-width: 768px) {
+			.typing-label,
+			.typing {
+				font-size: 20px;
+			}
+		}
